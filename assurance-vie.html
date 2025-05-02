@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Découvrez simplement le fonctionnement et les avantages de l'assurance vie pour épargner, transmettre ou préparer votre retraite.">
   <meta name="keywords" content="assurance vie, épargne, succession, placement financier, transmission, fiscalité">
-  <meta name="author" content="Votre Nom">
+  <meta name="author" content="Léo TREMOUREUX">
   <title>Comprendre l'assurance vie | Guide financier</title>
   <link rel="stylesheet" href="stylesheets/style.css">
   <!-- Polices -->
@@ -15,6 +15,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/favicon.png">
   <script src="javascripts/main.js" defer></script>
+  <script src="javascripts/asv.js" defer></script>
 </head>
 <body>
 
@@ -22,7 +23,7 @@
     <div class="container">
       <nav class="navbar">
         <div class="logo">
-          <a href="index.html">Votre Nom</a>
+          <a href="index.html">Léo TREMOUREUX</a>
         </div>
         <ul class="nav-menu">
           <li class="nav-item"><a href="index.html">Accueil</a></li>
@@ -44,7 +45,7 @@
         <div class="hero-content">
           <div class="hero-text">
             <h1>Comprendre l'assurance vie</h1>
-            <p class="intro">Un outil d’épargne aux multiples facettes, adapté à de nombreux objectifs : placement, transmission, retraite.</p>
+            <p class="intro">Un outil d'épargne aux multiples facettes, adapté à de nombreux objectifs : placement, transmission, retraite.</p>
           </div>
         </div>
       </div>
@@ -52,14 +53,51 @@
 
     <section class="content-section">
       <div class="container">
-        <h2>Qu’est-ce que l’assurance vie&nbsp;?</h2>
-        <p>L’assurance vie est un contrat d’épargne souscrit auprès d’un assureur. Elle permet de faire fructifier votre argent dans un cadre fiscal avantageux, tout en gardant une grande souplesse dans les versements et les retraits.</p>
+        <h2>Qu'est-ce que l'assurance vie&nbsp;?</h2>
+        <p>L'assurance vie est un contrat d'épargne souscrit auprès d'un assureur. Elle permet de faire fructifier votre argent dans un cadre fiscal avantageux, tout en gardant une grande souplesse dans les versements et les retraits.</p>
+
+        <!-- Quiz section -->
+        <div class="quiz-container">
+          <h3>Testez vos connaissances</h3>
+
+          <div class="quiz-question" id="question1">
+            <h4>Est-ce que mon argent est bloqué lorsque je place sur une assurance vie ?</h4>
+            <div class="quiz-options">
+              <button class="quiz-option" data-correct="false">Oui</button>
+              <button class="quiz-option" data-correct="true">Non</button>
+            </div>
+            <div class="quiz-feedback quiz-feedback-correct">
+              <h5>Correct !</h5>
+              <p>Non, votre argent n'est pas bloqué. Vous pouvez effectuer des retraits (rachats) à tout moment sur votre contrat d'assurance vie. Cependant, il est généralement conseillé de garder son contrat au moins 8 ans pour bénéficier des avantages fiscaux optimaux.</p>
+            </div>
+            <div class="quiz-feedback quiz-feedback-incorrect">
+              <h5>Incorrect</h5>
+              <p>Contrairement à certaines idées reçues, l'argent placé sur une assurance vie reste disponible. Vous pouvez effectuer des retraits partiels ou totaux (rachats) à tout moment. Toutefois, pour profiter pleinement des avantages fiscaux, il est recommandé de conserver votre contrat au moins 8 ans.</p>
+            </div>
+          </div>
+
+          <div class="quiz-question" id="question2">
+            <h4>L'assurance vie permet-elle de transmettre un capital à ses proches en cas de décès ?</h4>
+            <div class="quiz-options">
+              <button class="quiz-option" data-correct="true">Oui</button>
+              <button class="quiz-option" data-correct="false">Non</button>
+            </div>
+            <div class="quiz-feedback quiz-feedback-correct">
+              <h5>Correct !</h5>
+              <p>Oui, l'assurance vie est un excellent outil de transmission. En cas de décès, le capital est versé aux bénéficiaires que vous avez désignés, en dehors de la succession. Cela permet de transmettre jusqu'à 152 500€ par bénéficiaire sans droits de succession (pour les versements effectués avant 70 ans).</p>
+            </div>
+            <div class="quiz-feedback quiz-feedback-incorrect">
+              <h5>Incorrect</h5>
+              <p>L'assurance vie est justement un des meilleurs outils pour transmettre un capital à ses proches. En cas de décès, les sommes sont versées aux bénéficiaires que vous avez désignés, et bénéficient d'une fiscalité avantageuse avec une exonération jusqu'à 152 500€ par bénéficiaire pour les versements effectués avant 70 ans.</p>
+            </div>
+          </div>
+        </div>
 
         <h3>À quoi sert-elle&nbsp;?</h3>
         <div class="card-group">
           <div class="info-card">
             <h4>💰 Épargner</h4>
-            <p>Constituer une épargne à moyen ou long terme, avec différents supports d’investissement (fonds en euros, unités de compte).</p>
+            <p>Constituer une épargne à moyen ou long terme, avec différents supports d'investissement (fonds en euros, unités de compte).</p>
           </div>
           <div class="info-card">
             <h4>🎯 Préparer un projet</h4>
@@ -77,11 +115,11 @@
 
         <div class="schema-container">
           <img src="images/schema-assurance-vie.png" alt="Schéma explicatif de l'assurance vie" class="responsive-image">
-          <p class="caption">Exemple de fonctionnement simplifié d’un contrat d’assurance vie.</p>
+          <p class="caption">Exemple de fonctionnement simplifié d'un contrat d'assurance vie.</p>
         </div>
 
         <h3>Quels avantages fiscaux&nbsp;?</h3>
-        <p>L’assurance vie offre une fiscalité allégée sur les gains après 8 ans, ainsi que des exonérations intéressantes en cas de transmission aux bénéficiaires désignés.</p>
+        <p>L'assurance vie offre une fiscalité allégée sur les gains après 8 ans, ainsi que des exonérations intéressantes en cas de transmission aux bénéficiaires désignés.</p>
 
         <p>Il est important de bien définir vos objectifs (épargne, transmission, retraite) pour choisir les bons supports et adapter votre contrat à votre situation.</p>
       </div>
@@ -92,7 +130,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-logo">
-          <a href="index.html">Votre Nom</a>
+          <a href="index.html">Léo TREMOUREUX</a>
           <p>Conseiller en Investissements Financiers</p>
         </div>
         <div class="footer-links">
@@ -110,7 +148,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 Votre Nom - Conseiller en Investissements Financiers. Tous droits réservés.</p>
+        <p>&copy; 2025 Léo TREMOUREUX - Conseiller en Investissements Financiers. Tous droits réservés.</p>
         <p>Entreprise individuelle - SIRET: XXXXXXXXX</p>
         <p>Mentions légales | Politique de confidentialité</p>
       </div>
