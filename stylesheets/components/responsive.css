@@ -1,0 +1,179 @@
+/* Media Queries pour Responsive */
+@media (max-width: 992px) {
+  h1 {
+    font-size: 2.3rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .page-header {
+    padding: 120px 0 50px;
+  }
+
+  .timeline::before {
+    left: 60px;
+  }
+
+  .timeline-item {
+    padding-left: 90px;
+  }
+
+  .timeline-date {
+    width: 50px;
+    font-size: 0.9rem;
+  }
+
+  .timeline-content::before {
+    left: -26px;
+  }
+  .hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-image {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 60px 0;
+  }
+  .hero {
+    padding-top: 120px;
+  }
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    flex-direction: column;
+    background-color: var(--white);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-item {
+    margin: 15px 0;
+  }
+
+  .about-content {
+    flex-direction: column;
+  }
+
+  .timeline::before {
+    display: none;
+  }
+
+  .timeline-item {
+    padding-left: 0;
+    margin-bottom: 40px;
+  }
+
+  .timeline-date {
+    position: relative;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .timeline-content::before {
+    display: none;
+  }
+
+  .method-step {
+    flex-direction: column;
+  }
+
+  .method-number {
+    margin-bottom: 15px;
+    margin-right: 0;
+  }
+
+  .method-details::before {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  section {
+    padding: 40px 0;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .page-header {
+    padding: 100px 0 40px;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .expertise-grid, .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .commitment-item {
+    flex-direction: column;
+  }
+
+  .commitment-icon {
+    margin-bottom: 15px;
+    margin-right: 0;
+  }
+  .btn {
+    padding: 10px 20px;
+  }
+
+  .hero {
+    padding-top: 100px;
+  }
+}
+
+/* Animation pour améliorer l'UX */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.services-grid, .testimonial-slider, .contact-container {
+  animation: fadeIn 0.8s ease-out forwards;
+}
