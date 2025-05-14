@@ -269,59 +269,14 @@
   margin-top: 40px;
 }
 
-/* Section Certifications */
-.certifications {
-  background-color: var(--white);
-}
-
-.certifications-content {
-  background-color: var(--light-bg);
-  border-radius: var(--radius);
-  padding: 30px;
-  box-shadow: var(--shadow);
-  margin-top: 30px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.certifications-content.in-view {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.certifications-list {
-  padding-left: 20px;
-  margin-bottom: 20px;
-}
-
-.certifications-list li {
-  margin-bottom: 15px;
-  position: relative;
-}
-
-.certifications-list li::before {
-  content: "✓";
-  color: var(--primary-color);
-  position: absolute;
-  left: -20px;
-}
-
-.certifications-note {
-  font-style: italic;
-  color: var(--light-text);
-  border-top: 1px solid var(--border-color);
-  padding-top: 20px;
-}
-
 /* Animations */
-.about-content, .expertise-card, .certifications-content, .method-step, .commitment-item {
+.about-content, .expertise-card, .method-step, .commitment-item {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.about-content.in-view, .expertise-card.in-view, .certifications-content.in-view,
+.about-content.in-view, .expertise-card.in-view,
 .method-step.show, .commitment-item.show {
   opacity: 1;
   transform: translateY(0);

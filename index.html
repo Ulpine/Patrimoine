@@ -3,147 +3,292 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Conseiller en investissements financiers - Services personnalisés pour optimiser vos investissements et votre patrimoine.">
-    <meta name="keywords" content="conseiller financier, investissements, finance, patrimoine, banque, épargne">
+    <meta name="description" content="Léo TREMOUREUX - Conseil en investissements financiers et gestion de patrimoine pour tous. Accompagnement personnalisé pour sécuriser votre avenir financier.">
+    <meta name="keywords" content="conseil financier, investissements, gestion patrimoine, finance personnelle, épargne, placement, finance accessible">
     <meta name="author" content="Léo TREMOUREUX">
-    <title>Conseiller en Investissements Financiers | Accueil</title>
+    <title>Léo TREMOUREUX | Conseil en Investissements Financiers</title>
     <link rel="stylesheet" href="stylesheets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Préchargement des polices -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="javascripts/main.js" defer></script>
 </head>
 <body>
-    <header class="header">
+  <header class="header">
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <span class="logo-text">Léo TREMOUREUX</span>
+                    <!-- <span class="logo-subtitle">Conseil en Investissements Financiers</span> -->
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item active"><a href="index.html">Accueil</a></li>
+                <li class="nav-item"><a href="presentation.html">À propos</a></li>
+                <li class="nav-item"><a href="actualites.html">Actualités</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-cta">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main>
+<!-- Section Hero avec bannière -->
+<section class="hero-banner">
+  <div class="hero-overlay"></div>
+  <div class="container">
+      <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
+          <h1>La gestion de patrimoine pour tous</h1>
+          <p class="hero-tagline">Conseil en investissements financiers à Rennes</p>
+          <div class="hero-quote">
+              « Construire son avenir financier n'est pas un privilège, c'est un droit. »
+          </div>
+          <div class="hero-cta">
+              <a href="#myths" class="btn btn-primary">Découvrir</a>
+              <a href="#contact" class="btn btn-secondary">Prendre rendez-vous</a>
+          </div>
+      </div>
+  </div>
+</section>
+
+    <!-- Section Mythes -->
+    <section id="myths" class="myths">
         <div class="container">
-            <nav class="navbar">
-                <div class="logo">
-                    <a href="index.html">Léo TREMOUREUX</a>
+            <div class="myths-intro" data-aos="fade-up">
+                <h2>Les obstacles à surmonter</h2>
+                <p>
+                    Vous avez peut-être des réticences à consulter un conseiller financier.
+                    Voyons ensemble pourquoi ces obstacles ne devraient pas vous empêcher de construire sereinement votre avenir financier.
+                </p>
+            </div>
+
+            <div class="myths-cards">
+                <!-- Carte 1 -->
+                <div class="myth-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="myth-bubble">
+                        "C'est trop tôt pour moi, je verrai plus tard..."
+                    </div>
+                    <div class="myth-response">
+                        <h3>Le bon moment, c'est maintenant</h3>
+                        <p>
+                            Plus vous commencez tôt, plus vous donnez du temps à votre épargne pour se développer.
+                            Même avec de petites sommes, la régularité et la patience sont vos meilleurs alliés pour
+                            construire votre patrimoine.
+                        </p>
+                    </div>
                 </div>
-                <ul class="nav-menu">
-                    <li class="nav-item active"><a href="index.html">Accueil</a></li>
-                    <li class="nav-item"><a href="presentation.html">Présentation</a></li>
-                    <li class="nav-item"><a href="actualites.html">Actualités financières</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
+
+                <!-- Carte 2 -->
+                <div class="myth-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="myth-bubble">
+                        "Les conseillers financiers ne pensent qu'à vendre leurs produits..."
+                    </div>
+                    <div class="myth-response">
+                        <h3>Indépendance et objectivité</h3>
+                        <p>
+                            En tant que conseiller indépendant, je ne suis pas lié à un établissement spécifique.
+                            Mon seul objectif est de trouver les solutions qui correspondent vraiment à vos besoins,
+                            sans pression commerciale.
+                        </p>
+                    </div>
                 </div>
-            </nav>
+
+                <!-- Carte 3 -->
+                <div class="myth-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="myth-bubble">
+                        "Je préfère gérer mon argent tout seul..."
+                    </div>
+                    <div class="myth-response">
+                        <h3>Autonomie éclairée</h3>
+                        <p>
+                            Mon rôle n'est pas de décider à votre place, mais de vous donner les clés pour
+                            comprendre et faire les meilleurs choix. Je vous accompagne vers l'autonomie financière
+                            avec des conseils adaptés à votre situation.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </header>
+    </section>
 
-    <main>
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h1>Conseiller en Investissements Financiers</h1>
-                        <p class="tagline">"L'investissement intelligent est la clé d'un avenir financier serein."</p>
-                        <p class="intro">Expertise personnalisée pour optimiser vos placements et sécuriser votre patrimoine.</p>
-                        <a href="#contact" class="btn btn-primary">Me contacter</a>
-                    </div>
-                    <div class="hero-image">
-                        <img src="images/profile.jpg" alt="Léo TREMOUREUX - Conseiller en Investissements Financiers" class="profile-image">
+<!-- Section Approche -->
+<section class="approach">
+  <div class="container">
+      <h2 data-aos="fade-up">Pourquoi faire appel à moi ?</h2>
+
+      <div class="approach-content">
+          <div class="approach-text" data-aos="fade-right">
+              <p>
+                  Dans un environnement financier parfois difficile à décrypter, il est rassurant de pouvoir compter sur quelqu’un de disponible, à l’écoute et indépendant.
+                  Je prends le temps de comprendre votre situation, avec bienveillance et simplicité.
+              </p>
+              <p>
+                  Mon rôle est de vous accompagner pas à pas, en toute transparence, pour faire les bons choix selon ce qui compte vraiment pour vous.
+                  Ensemble, nous construisons un parcours adapté à vos besoins et à votre rythme.
+              </p>
+          </div>
+
+          <div class="approach-steps" data-aos="fade-left">
+              <div class="step">
+                  <div class="step-number">1</div>
+                  <div class="step-content">
+                      <div class="step-title">Compréhension globale</div>
+                      <p>
+                          Je prends le temps d’écouter et de cerner l’ensemble de votre situation, afin de vous proposer un accompagnement qui a du sens pour vous.
+                      </p>
+                  </div>
+              </div>
+
+              <div class="step">
+                  <div class="step-number">2</div>
+                  <div class="step-content">
+                      <div class="step-title">Conseils personnalisés</div>
+                      <p>
+                          Chaque situation est unique : je vous propose des pistes concrètes, en lien avec vos projets, vos priorités et votre façon de voir l’avenir.
+                      </p>
+                  </div>
+              </div>
+
+              <div class="step">
+                  <div class="step-number">3</div>
+                  <div class="step-content">
+                      <div class="step-title">Un suivi fiable</div>
+                      <p>
+                          Je reste à vos côtés dans la durée, disponible pour ajuster ensemble le cap si besoin, en fonction de l’évolution de vos projets ou de votre environnement.
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Section Illustration BD -->
+<section class="comic-section">
+  <div class="container">
+    <svg class="comic-illustration" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+
+      <!-- Fond -->
+      <rect width="800" height="400" fill="#f8f9fa" rx="20" ry="20" />
+
+      <!-- Personnage calme/confus -->
+      <g class="comic-character">
+        <circle cx="180" cy="180" r="60" fill="#ced6e0" />
+        <circle cx="180" cy="130" r="40" fill="#ced6e0" />
+        <circle cx="165" cy="120" r="6" fill="#2f3542" />
+        <circle cx="195" cy="120" r="6" fill="#2f3542" />
+        <path d="M165 145 Q180 155 195 145" stroke="#2f3542" stroke-width="3" fill="none" />
+        <text x="205" y="100" font-family="Arial" font-size="30" fill="#ffa502">?</text>
+      </g>
+
+      <!-- Bulle de question -->
+      <g class="comic-bubble">
+        <path d="M260 90 Q390 60 520 90 Q550 120 520 150 Q390 180 260 150 Q230 120 260 90" fill="white" stroke="#2f3542" stroke-width="2" />
+        <path d="M260 135 L220 160" stroke="#2f3542" stroke-width="2" />
+        <text x="290" y="120" font-family="Arial" font-size="16" fill="#2f3542">Je ne sais pas par où commencer...</text>
+        <text x="290" y="145" font-family="Arial" font-size="16" fill="#2f3542">Tout ça me semble un peu flou.</text>
+      </g>
+
+      <!-- Réponse bienveillante -->
+      <g class="comic-response">
+        <rect x="340" y="220" width="400" height="130" rx="12" ry="12" fill="#ffa502" opacity="0.85" />
+        <text x="360" y="255" font-family="Arial" font-size="16" fill="#2f3542" font-weight="bold">On commence simplement, ensemble.</text>
+        <text x="360" y="280" font-family="Arial" font-size="16" fill="#2f3542">Je suis là pour vous écouter, comprendre</text>
+        <text x="360" y="305" font-family="Arial" font-size="16" fill="#2f3542">et vous accompagner pas à pas.</text>
+      </g>
+
+    </svg>
+  </div>
+</section>
+
+
+    <!-- Section Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 data-aos="fade-up">Prenons contact</h2>
+            <div class="contact-container">
+                <div class="contact-info" data-aos="fade-right">
+                    <p>Basé à <strong>Rennes</strong>, je vous propose un premier échange sans engagement pour répondre à vos questions et comprendre vos projets financiers.</p>
+                    <div class="contact-details">
+                        <p><strong>Email:</strong> <a href="mailto:contact@leotremoureux.fr">contact@leotremoureux.fr</a></p>
+                        <p><strong>Téléphone:</strong> <a href="tel:+33600000000">06 00 00 00 00</a></p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="services">
-            <div class="container">
-                <h2>Mes services</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">📈</div>
-                        <h3>Analyse de portefeuille</h3>
-                        <p>Évaluation complète de vos investissements actuels et recommandations stratégiques.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">🛡️</div>
-                        <h3>Planification patrimoniale</h3>
-                        <p>Structuration optimale de votre patrimoine selon vos objectifs à court et long terme.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">🏦</div>
-                        <h3>Conseil en placement</h3>
-                        <p>Sélection d'instruments financiers adaptés à votre profil de risque et horizon d'investissement.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2>Me contacter</h2>
-                <div class="contact-container">
-                    <div class="contact-info">
-                        <p>Je suis à votre disposition pour discuter de vos objectifs financiers et vous proposer des solutions adaptées.</p>
-                        <div class="contact-details">
-                            <p><strong>Email:</strong> <a href="mailto:votre.email@domaine.com">votre.email@domaine.com</a></p>
-                            <p><strong>Téléphone:</strong> <a href="tel:+33600000000">06 00 00 00 00</a></p>
+                <div class="contact-form" data-aos="fade-left">
+                    <form id="contactForm" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Nom</label>
+                            <input type="text" id="name" name="name" required>
                         </div>
-                    </div>
-                    <div class="contact-form">
-                        <form id="contactForm" action="#" method="POST">
-                            <div class="form-group">
-                                <label for="name">Nom</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Téléphone</label>
-                                <input type="tel" id="phone" name="phone">
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="5" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Envoyer</button>
-                        </form>
-                    </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                    </form>
                 </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <a href="index.html">Léo TREMOUREUX</a>
-                    <p>Conseiller en Investissements Financiers</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Navigation</h4>
-                    <ul>
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="presentation.html">Présentation</a></li>
-                        <li><a href="actualites.html">Actualités financières</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contact</h4>
-                    <p>Email: <a href="mailto:votre.email@domaine.com">votre.email@domaine.com</a></p>
-                    <p>Téléphone: <a href="tel:+33600000000">06 00 00 00 00</a></p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Léo TREMOUREUX - Conseiller en Investissements Financiers. Tous droits réservés.</p>
-                <p>Entreprise individuelle - SIRET: XXXXXXXXX</p>
-                <p>Mentions légales | Politique de confidentialité</p>
             </div>
         </div>
-    </footer>
-
-    <script src="js/main.js"></script>
-</body>
-</html>
+    </section>
+</main>
+  <footer class="footer">
+      <div class="container">
+          <div class="footer-content">
+              <div class="footer-logo">
+                  <a href="index.html">Léo TREMOUREUX</a>
+                  <p>Conseiller en Investissements Financiers</p>
+              </div>
+              <div class="footer-links">
+                  <h4>Navigation</h4>
+                  <ul>
+                      <li><a href="index.html">Accueil</a></li>
+                      <li><a href="presentation.html">À propos</a></li>
+                      <li><a href="actualites.html">Actualités</a></li>
+                  </ul>
+              </div>
+              <div class="footer-legal">
+                  <h4>Informations légales</h4>
+                  <ul>
+                      <li><a href="mentions-legales.html">Mentions légales</a></li>
+                      <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+                      <li><a href="cgv.html">CGV</a></li>
+                  </ul>
+              </div>
+              <div class="footer-contact">
+                  <h4>Contact</h4>
+                  <p>Email: <a href="mailto:contact@leotremoureux.fr">contact@leotremoureux.fr</a></p>
+                  <p>Téléphone: <a href="tel:+33600000000">06 00 00 00 00</a></p>
+                  <div class="footer-socials">
+                      <a href="#" class="social-link" aria-label="LinkedIn">
+                          <i class="fab fa-linkedin-in"></i>
+                      </a>
+                  </div>
+              </div>
+          </div>
+          <div class="footer-bottom">
+              <p>&copy; 2025 Léo TREMOUREUX - Conseiller en Investissements Financiers. Tous droits réservés.</p>
+              <p>SIRET: XXXXXXXXX - Immatriculé à l'ORIAS sous le n° XXXXXXXX</p>
+          </div>
+      </div>
+  </footer>
+    </body>
+    </html>

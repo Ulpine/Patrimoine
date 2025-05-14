@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // Initialisation AOS (Animation On Scroll)
+  AOS.init({
+      duration: 800,
+      easing: 'ease',
+      once: true,
+      offset: 100
+  });
+
   // Menu hamburger pour responsive
   const hamburger = document.querySelector('.hamburger');
   const navMenu = document.querySelector('.nav-menu');
@@ -74,10 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
           }
 
           if (isValid) {
-              // Ici vous pourriez ajouter la logique d'envoi de formulaire
-              // via AJAX ou autre méthode
-
-              // Pour l'instant, on simule une soumission réussie
+              // Simulation d'envoi
               const submitBtn = contactForm.querySelector('button[type="submit"]');
               const originalText = submitBtn.textContent;
 
@@ -104,86 +109,57 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   }
 
-  // Animation au scroll pour les sections
-  const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1
-  };
+  function showError(fieldId, message) {
+      const field = document.getElementById(fieldId);
+      let errorElement = field.nextElementSibling;
 
-  const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-          if (entry.isIntersecting) {
-              entry.target.classList.add('in-view');
-              observer.unobserve(entry.target);
+      if (!errorElement || !errorElement.classList.contains('error-message')) {
+          errorElement = document.createElement('div');
+          errorElement.className = 'error-message';
+          errorElement.style.color = '#e74c3c';
+          errorElement.style.fontSize = '0.8rem';
+          errorElement.style.marginTop = '5px';
+          field.parentNode.insertBefore(errorElement, field.nextSibling);
+      }
+
+      errorElement.textContent = message;
+      field.style.borderColor = '#e74c3c';
+  }
+
+  function clearError(fieldId) {
+      const field = document.getElementById(fieldId);
+      const errorElement = field.nextElementSibling;
+
+      if (errorElement && errorElement.classList.contains('error-message')) {
+          errorElement.remove();
+      }
+
+      field.style.borderColor = '';
+  }
+
+  function isValidEmail(email) {
+      const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(email).toLowerCase());
+  }
+
+  // Défilement fluide pour les ancres
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+              const headerHeight = document.querySelector('.header').offsetHeight;
+              const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+              window.scrollTo({
+                  top: targetPosition,
+                  behavior: 'smooth'
+              });
           }
       });
-  }, observerOptions);
-
-  document.querySelectorAll('section').forEach(section => {
-      observer.observe(section);
   });
 });
-
-// Fonctions utilitaires
-
-function showError(fieldId, message) {
-  const field = document.getElementById(fieldId);
-  let errorElement = field.nextElementSibling;
-
-  if (!errorElement || !errorElement.classList.contains('error-message')) {
-      errorElement = document.createElement('div');
-      errorElement.className = 'error-message';
-      errorElement.style.color = '#e74c3c';
-      errorElement.style.fontSize = '0.8rem';
-      errorElement.style.marginTop = '5px';
-      field.parentNode.insertBefore(errorElement, field.nextSibling);
-  }
-
-  errorElement.textContent = message;
-  field.style.borderColor = '#e74c3c';
-}
-
-function clearError(fieldId) {
-  const field = document.getElementById(fieldId);
-  const errorElement = field.nextElementSibling;
-
-  if (errorElement && errorElement.classList.contains('error-message')) {
-      errorElement.remove();
-  }
-
-  field.style.borderColor = '';
-}
-
-function isValidEmail(email) {
-  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(String(email).toLowerCase());
-}
-
-// Ajouter une classe de style pour les animations
-document.documentElement.style.setProperty('--animate-duration', '.8s');
-
-// Ajouter scrollspy pour la navigation
-function scrollSpy() {
-  const sections = document.querySelectorAll('section');
-  const navItems = document.querySelectorAll('.nav-item');
-
-  let current = '';
-
-  sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-
-      if (pageYOffset >= sectionTop - 100) {
-          current = section.getAttribute('id');
-      }
-  });
-
-  navItems.forEach((item) => {
-      item.classList.remove('active');
-      const href = item.querySelector('a').getAttribute('href');
-      if (href === `#${current}` || (current === '' && href === 'index.html')) {
-          item.classList.add('active');
-      }
-  });
-}
