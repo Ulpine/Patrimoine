@@ -223,8 +223,13 @@ strong {
 
 /* Hamburger Menu */
 .hamburger {
-  display: none;
+  display: none; /* Par défaut caché sur desktop */
   cursor: pointer;
+  z-index: 1002; /* S'assurer qu'il est au-dessus des autres éléments */
+  position: relative;
+  background: transparent;
+  border: none;
+  padding: 5px;
 }
 
 .bar {

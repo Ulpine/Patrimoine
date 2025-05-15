@@ -7,24 +7,35 @@ document.addEventListener('DOMContentLoaded', function() {
       offset: 100
   });
 
-  // Menu hamburger pour responsive
+  // Vérifiez d'abord que ces sélecteurs correspondent bien à vos éléments HTML
+document.addEventListener('DOMContentLoaded', function() {
   const hamburger = document.querySelector('.hamburger');
   const navMenu = document.querySelector('.nav-menu');
 
-  if (hamburger) {
-      hamburger.addEventListener('click', function() {
-          hamburger.classList.toggle('active');
-          navMenu.classList.toggle('active');
-      });
+  // Ajout d'un log pour débogage
+  console.log('Hamburger:', hamburger);
+  console.log('Nav Menu:', navMenu);
+
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', function() {
+      console.log('Hamburger clicked');
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+  } else {
+    console.error("Impossible de trouver le menu hamburger ou la navigation");
   }
 
-  // Fermer le menu quand on clique sur un lien
+  // Pour fermer le menu quand on clique sur un lien
   document.querySelectorAll('.nav-item a').forEach(link => {
-      link.addEventListener('click', () => {
-          hamburger.classList.remove('active');
-          navMenu.classList.remove('active');
-      });
+    link.addEventListener('click', () => {
+      if (hamburger && navMenu) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      }
+    });
   });
+});
 
   // Gestion du header au scroll
   const header = document.querySelector('.header');
