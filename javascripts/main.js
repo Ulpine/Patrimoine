@@ -163,3 +163,66 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const questionMessage = document.getElementById('question-message');
+  const responseMessage = document.getElementById('response-message');
+
+  // Subtle hover effect for messages
+  const messages = document.querySelectorAll('.message');
+  messages.forEach(message => {
+    message.addEventListener('mouseenter', () => {
+      message.style.transform = 'translateY(-5px)';
+      message.style.boxShadow = message.classList.contains('message-question')
+        ? '0 15px 35px rgba(0, 0, 0, 0.1)'
+        : '0 15px 35px rgba(52, 152, 219, 0.3)';
+    });
+
+    message.addEventListener('mouseleave', () => {
+      message.style.transform = 'translateY(0)';
+      message.style.boxShadow = message.classList.contains('message-question')
+        ? '0 10px 30px rgba(0, 0, 0, 0.05)'
+        : '0 10px 30px rgba(52, 152, 219, 0.2)';
+    });
+  });
+
+  // Show messages with staggered timing
+  setTimeout(() => {
+    questionMessage.classList.add('message-visible');
+
+    setTimeout(() => {
+      responseMessage.classList.add('message-visible');
+    }, 700);
+  }, 300);
+
+  // Optional: Parallax effect on mouse move
+  document.addEventListener('mousemove', e => {
+    const container = document.querySelector('.consultation-container');
+    const avatar = document.querySelector('.avatar-wrapper');
+
+    const containerRect = container.getBoundingClientRect();
+    const centerX = containerRect.width / 2;
+    const centerY = containerRect.height / 2;
+
+    const mouseX = e.clientX - containerRect.left;
+    const mouseY = e.clientY - containerRect.top;
+
+    const moveX = (mouseX - centerX) / 30;
+    const moveY = (mouseY - centerY) / 30;
+
+    avatar.style.transform = `translate(${moveX}px, ${moveY}px)`;
+
+    messages.forEach((message, index) => {
+      const factor = index === 0 ? -0.5 : -0.3;
+      message.style.transform = `translateY(0) translate(${moveX * factor}px, ${moveY * factor}px)`;
+    });
+  });
+
+  // Reset transforms when mouse leaves
+  document.querySelector('.consultation-container').addEventListener('mouseleave', () => {
+    document.querySelector('.avatar-wrapper').style.transform = 'translate(0, 0)';
+    messages.forEach(message => {
+      message.style.transform = 'translateY(0)';
+    });
+  });
+});

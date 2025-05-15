@@ -19,26 +19,29 @@
   <script src="javascripts/main.js" defer></script>
 </head>
 <body>
-
   <header class="header">
     <div class="container">
-      <nav class="navbar">
-        <div class="logo">
-          <a href="index.html">Léo TREMOUREUX</a>
-        </div>
-        <ul class="nav-menu">
-          <li class="nav-item"><a href="index.html">Accueil</a></li>
-          <li class="nav-item"><a href="presentation.html">Présentation</a></li>
-          <li class="nav-item active"><a href="actualites.html">Actualités financières</a></li>
-        </ul>
-        <div class="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
-      </nav>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <span class="logo-text">Léo TREMOUREUX</span>
+                    <!-- <span class="logo-subtitle">Conseil en Investissements Financiers</span> -->
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html">Accueil</a></li>
+                <li class="nav-item"><a href="presentation.html">À propos</a></li>
+                <li class="nav-item active"><a href="actualites.html">Actualités</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-cta">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
     </div>
-  </header>
+</header>
 
   <main>
     <section class="hero">
@@ -79,8 +82,41 @@
         </div>
       </div>
     </section>
-
-
+    <section id="contact" class="contact">
+      <div class="container">
+          <h2 data-aos="fade-up">Prenons contact</h2>
+          <div class="contact-container">
+              <div class="contact-info" data-aos="fade-right">
+                  <p>Basé à <strong>Rennes</strong>, je vous propose un premier échange sans engagement pour répondre à vos questions et comprendre vos projets financiers.</p>
+                  <div class="contact-details">
+                      <p><strong>Email:</strong> <a href="mailto:contact@leotremoureux.fr">contact@leotremoureux.fr</a></p>
+                      <p><strong>Téléphone:</strong> <a href="tel:+33600000000">06 00 00 00 00</a></p>
+                  </div>
+              </div>
+              <div class="contact-form" data-aos="fade-left">
+                  <form id="contactForm" action="#" method="POST">
+                      <div class="form-group">
+                          <label for="name">Nom</label>
+                          <input type="text" id="name" name="name" required>
+                      </div>
+                      <div class="form-group">
+                          <label for="email">Email</label>
+                          <input type="email" id="email" name="email" required>
+                      </div>
+                      <div class="form-group">
+                          <label for="phone">Téléphone</label>
+                          <input type="tel" id="phone" name="phone">
+                      </div>
+                      <div class="form-group">
+                          <label for="message">Message</label>
+                          <textarea id="message" name="message" rows="5" required></textarea>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Envoyer</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </section>
   </main>
 
   <footer class="footer">

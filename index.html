@@ -32,7 +32,7 @@
                 <li class="nav-item active"><a href="index.html">Accueil</a></li>
                 <li class="nav-item"><a href="presentation.html">À propos</a></li>
                 <li class="nav-item"><a href="actualites.html">Actualités</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-cta">Contact</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-cta">Contact</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -174,41 +174,34 @@
   </div>
 </section>
 
-<!-- Section Illustration BD -->
-<section class="comic-section">
-  <div class="container">
-    <svg class="comic-illustration" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+<!-- Section Consultation -->
+<section class="consultation-section">
+  <div class="consultation-container">
+    <div class="avatar-container">
+      <div class="avatar-wrapper">
+        <div class="avatar-glow"></div>
+        <div class="avatar"></div>
+      </div>
+      <div class="avatar-shadow"></div>
+    </div>
 
-      <!-- Fond -->
-      <rect width="800" height="400" fill="#f8f9fa" rx="20" ry="20" />
+    <div class="conversation-container">
+      <div class="message message-question" id="question-message">
+        <div class="message-header">
+          <span class="message-dot"></span>
+          <span class="message-title">Question</span>
+        </div>
+        <p>Comment structurer mon projet efficacement ? Tout cela me semble encore un peu complexe.</p>
+      </div>
 
-      <!-- Personnage calme/confus -->
-      <g class="comic-character">
-        <circle cx="180" cy="180" r="60" fill="#ced6e0" />
-        <circle cx="180" cy="130" r="40" fill="#ced6e0" />
-        <circle cx="165" cy="120" r="6" fill="#2f3542" />
-        <circle cx="195" cy="120" r="6" fill="#2f3542" />
-        <path d="M165 145 Q180 155 195 145" stroke="#2f3542" stroke-width="3" fill="none" />
-        <text x="205" y="100" font-family="Arial" font-size="30" fill="#ffa502">?</text>
-      </g>
-
-      <!-- Bulle de question -->
-      <g class="comic-bubble">
-        <path d="M260 90 Q390 60 520 90 Q550 120 520 150 Q390 180 260 150 Q230 120 260 90" fill="white" stroke="#2f3542" stroke-width="2" />
-        <path d="M260 135 L220 160" stroke="#2f3542" stroke-width="2" />
-        <text x="290" y="120" font-family="Arial" font-size="16" fill="#2f3542">Je ne sais pas par où commencer...</text>
-        <text x="290" y="145" font-family="Arial" font-size="16" fill="#2f3542">Tout ça me semble un peu flou.</text>
-      </g>
-
-      <!-- Réponse bienveillante -->
-      <g class="comic-response">
-        <rect x="340" y="220" width="400" height="130" rx="12" ry="12" fill="#ffa502" opacity="0.85" />
-        <text x="360" y="255" font-family="Arial" font-size="16" fill="#2f3542" font-weight="bold">On commence simplement, ensemble.</text>
-        <text x="360" y="280" font-family="Arial" font-size="16" fill="#2f3542">Je suis là pour vous écouter, comprendre</text>
-        <text x="360" y="305" font-family="Arial" font-size="16" fill="#2f3542">et vous accompagner pas à pas.</text>
-      </g>
-
-    </svg>
+      <div class="message message-response" id="response-message">
+        <div class="message-header">
+          <span class="message-dot response-dot"></span>
+          <span class="message-title">Réponse</span>
+        </div>
+        <p>Ne vous inquiétez pas. Commençons par les bases et avançons ensemble étape par étape. Je suis là pour vous accompagner tout au long du processus.</p>
+      </div>
+    </div>
   </div>
 </section>
 
