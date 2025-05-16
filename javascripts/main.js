@@ -37,20 +37,24 @@ document.addEventListener('DOMContentLoaded', function() {
     console.error("Impossible de trouver le menu hamburger ou la navigation");
   }
 
-  // Gestion du header au scroll
+  // Gestion du header au scroll - MODIFIÉ POUR AJOUTER LA CLASSE scrolled
   const header = document.querySelector('.header');
   let lastScrollTop = 0;
 
   if (header) {
+    // Ajoutez la classe default au chargement de la page
+    header.classList.add('default');
+
     window.addEventListener('scroll', function() {
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-      if (scrollTop > 100) {
-        header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-        header.style.background = '#ffffff';
+      // Ajoute la classe scrolled quand on scroll plus bas que 50px
+      if (scrollTop > 50) {
+        header.classList.remove('default');
+        header.classList.add('scrolled');
       } else {
-        header.style.boxShadow = 'none';
-        header.style.background = '#ffffff';
+        header.classList.remove('scrolled');
+        header.classList.add('default');
       }
 
       lastScrollTop = scrollTop;
@@ -169,6 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
+        // Utiliser la hauteur actuelle du header pour calculer le décalage
         const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
         const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
 

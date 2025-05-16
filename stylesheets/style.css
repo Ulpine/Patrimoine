@@ -171,12 +171,25 @@ strong {
   background-color: var(--bg-color);
   transition: var(--transition);
   padding: 15px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* État normal (grand) du header */
+.header.default {
+  padding: 15px 0;
+}
+
+/* État réduit du header lors du scroll */
+.header.scrolled {
+  padding: 10px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 15px;
 }
 
 .logo a {
@@ -184,6 +197,18 @@ strong {
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--primary-color);
+}
+
+/* Ajustement du logo et du texte lors du scroll */
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.header.scrolled .logo-text {
+  font-size: 1.3rem;
 }
 
 .nav-menu {
