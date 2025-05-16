@@ -190,6 +190,7 @@ strong {
   justify-content: space-between;
   align-items: center;
   padding: 0 15px;
+  position: relative; /* Ajout pour un meilleur contrôle de positionnement */
 }
 
 .logo a {
@@ -201,14 +202,14 @@ strong {
 
 /* Ajustement du logo et du texte lors du scroll */
 .logo-text {
-  font-size: 1.5rem;
+  font-size: 1.4rem; /* Réduit de 1.5rem à 1.4rem */
   font-weight: 700;
   color: var(--primary-color);
   transition: all 0.3s ease;
 }
 
 .header.scrolled .logo-text {
-  font-size: 1.3rem;
+  font-size: 1.2rem; /* Réduit de 1.3rem à 1.2rem */
 }
 
 .nav-menu {
@@ -250,20 +251,26 @@ strong {
 .hamburger {
   display: none; /* Par défaut caché sur desktop */
   cursor: pointer;
-  z-index: 1002; /* S'assurer qu'il est au-dessus des autres éléments */
-  position: relative;
+  z-index: 1002;
   background: transparent;
   border: none;
-  padding: 5px;
+  padding: 0;
+  margin: 0; /* Enlève la marge */
+  height: 22px; /* Hauteur fixe pour faciliter l'alignement */
+  width: 30px; /* Largeur fixe */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Espacement régulier des barres */
+  align-self: center; /* Centrage vertical */
 }
 
 .bar {
   display: block;
-  width: 25px;
+  width: 100%;
   height: 3px;
-  margin: 5px auto;
+  margin: 0; /* Suppression des marges pour un meilleur contrôle */
   transition: var(--transition);
-  background-color: var(--text-color);
+  background-color: var(--primary-color);
   border-radius: 3px;
 }
 

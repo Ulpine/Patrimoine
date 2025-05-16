@@ -47,16 +47,9 @@
   }
     /* Hamburger menu */
     .hamburger {
-      display: block !important;
-      cursor: pointer;
-      z-index: 1002;
-      width: 30px;
-      height: 25px;
-      position: relative;
-      background: transparent;
-      border: none;
-      padding: 0;
-      margin-right: 10px;
+      display: flex !important;
+      align-items: center;
+      margin-right: 0;
     }
 
     .bar {
@@ -71,7 +64,7 @@
 
   /* Animation du hamburger */
   .hamburger.active .bar:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg);
   }
 
   .hamburger.active .bar:nth-child(2) {
@@ -79,7 +72,7 @@
   }
 
   .hamburger.active .bar:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg);
   }
 
   /* Menu navigation */
@@ -204,11 +197,15 @@
     font-size: 1rem;
   }
   .logo-text {
-    font-size: 1.3rem;
+    font-size: 1.2rem; /* Réduit davantage pour les petits écrans */
   }
 
   .header.scrolled .logo-text {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+  }
+  .hamburger {
+    width: 28px;
+    height: 20px;
   }
 
   /* Ajustement du padding pour le header */
