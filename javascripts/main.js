@@ -7,19 +7,18 @@ document.addEventListener('DOMContentLoaded', function() {
       offset: 100
   });
 
-  // Vérifiez d'abord que ces sélecteurs correspondent bien à vos éléments HTML
-document.addEventListener('DOMContentLoaded', function() {
+  // Gestion du menu hamburger - CORRECTION
   const hamburger = document.querySelector('.hamburger');
   const navMenu = document.querySelector('.nav-menu');
 
-  // Ajout d'un log pour débogage
+  // Vérifiez que ces éléments existent
   console.log('Hamburger:', hamburger);
   console.log('Nav Menu:', navMenu);
 
   if (hamburger && navMenu) {
     hamburger.addEventListener('click', function() {
       console.log('Hamburger clicked');
-      hamburger.classList.toggle('active');
+      this.classList.toggle('active');
       navMenu.classList.toggle('active');
     });
   } else {
@@ -35,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-});
 
   // Gestion du header au scroll
   const header = document.querySelector('.header');
@@ -173,9 +171,8 @@ document.addEventListener('DOMContentLoaded', function() {
           }
       });
   });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
+  // Animation de la section de consultation
   const questionMessage = document.getElementById('question-message');
   const responseMessage = document.getElementById('response-message');
 
@@ -198,42 +195,49 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Show messages with staggered timing
-  setTimeout(() => {
-    questionMessage.classList.add('message-visible');
-
+  if (questionMessage && responseMessage) {
     setTimeout(() => {
-      responseMessage.classList.add('message-visible');
-    }, 700);
-  }, 300);
+      questionMessage.classList.add('message-visible');
 
-  // Optional: Parallax effect on mouse move
-  document.addEventListener('mousemove', e => {
-    const container = document.querySelector('.consultation-container');
-    const avatar = document.querySelector('.avatar-wrapper');
+      setTimeout(() => {
+        responseMessage.classList.add('message-visible');
+      }, 700);
+    }, 300);
 
-    const containerRect = container.getBoundingClientRect();
-    const centerX = containerRect.width / 2;
-    const centerY = containerRect.height / 2;
+    // Optional: Parallax effect on mouse move
+    const consultationContainer = document.querySelector('.consultation-container');
+    if (consultationContainer) {
+      document.addEventListener('mousemove', e => {
+        const avatar = document.querySelector('.avatar-wrapper');
+        if (!avatar || !consultationContainer) return;
 
-    const mouseX = e.clientX - containerRect.left;
-    const mouseY = e.clientY - containerRect.top;
+        const containerRect = consultationContainer.getBoundingClientRect();
+        const centerX = containerRect.width / 2;
+        const centerY = containerRect.height / 2;
 
-    const moveX = (mouseX - centerX) / 30;
-    const moveY = (mouseY - centerY) / 30;
+        const mouseX = e.clientX - containerRect.left;
+        const mouseY = e.clientY - containerRect.top;
 
-    avatar.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        const moveX = (mouseX - centerX) / 30;
+        const moveY = (mouseY - centerY) / 30;
 
-    messages.forEach((message, index) => {
-      const factor = index === 0 ? -0.5 : -0.3;
-      message.style.transform = `translateY(0) translate(${moveX * factor}px, ${moveY * factor}px)`;
-    });
-  });
+        avatar.style.transform = `translate(${moveX}px, ${moveY}px)`;
 
-  // Reset transforms when mouse leaves
-  document.querySelector('.consultation-container').addEventListener('mouseleave', () => {
-    document.querySelector('.avatar-wrapper').style.transform = 'translate(0, 0)';
-    messages.forEach(message => {
-      message.style.transform = 'translateY(0)';
-    });
-  });
+        messages.forEach((message, index) => {
+          const factor = index === 0 ? -0.5 : -0.3;
+          message.style.transform = `translateY(0) translate(${moveX * factor}px, ${moveY * factor}px)`;
+        });
+      });
+
+      // Reset transforms when mouse leaves
+      consultationContainer.addEventListener('mouseleave', () => {
+        const avatar = document.querySelector('.avatar-wrapper');
+        if (avatar) avatar.style.transform = 'translate(0, 0)';
+
+        messages.forEach(message => {
+          message.style.transform = 'translateY(0)';
+        });
+      });
+    }
+  }
 });

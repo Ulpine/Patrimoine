@@ -45,22 +45,33 @@
   .hero {
     padding-top: 120px;
   }
-  .hamburger {
-    display: block; /* Afficher seulement en mode mobile */
-  }
+    /* Hamburger menu */
+    .hamburger {
+      display: block !important; /* Forcer l'affichage */
+      cursor: pointer;
+      z-index: 1002;
+      width: 30px;
+      height: 25px;
+      position: relative;
+      background: transparent;
+      border: none;
+      padding: 0;
+      margin-right: 10px;
+    }
 
-  .bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    transition: all 0.3s ease;
-    background-color: var(--primary-color);
-  }
+    .bar {
+      display: block;
+      width: 30px;
+      height: 3px;
+      margin: 6px 0;
+      transition: all 0.3s ease;
+      background-color: var(--primary-color);
+      border-radius: 3px;
+    }
 
-  /* Animation du hamburger quand il est activé */
+  /* Animation du hamburger */
   .hamburger.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
+    transform: translateY(9px) rotate(45deg);
   }
 
   .hamburger.active .bar:nth-child(2) {
@@ -68,43 +79,41 @@
   }
 
   .hamburger.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-9px) rotate(-45deg);
   }
 
-  /* Style du menu principal en mode mobile */
+  /* Menu navigation */
   .nav-menu {
     position: fixed;
-    left: -100%; /* Hors de l'écran par défaut */
-    top: 70px; /* Aligner sous le header */
+    left: -100%;
+    top: 70px;
     flex-direction: column;
     background-color: var(--white);
     width: 100%;
     text-align: center;
-    transition: 0.3s ease-in-out;
+    transition: 0.3s;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
     padding: 20px 0;
     z-index: 1001;
-    height: calc(100vh - 70px); /* Hauteur pour occuper tout l'écran */
-    overflow-y: auto; /* Si le menu est long */
-    gap: 20px; /* Espacement entre les éléments */
+    height: calc(100vh - 70px);
+    overflow-y: auto;
   }
 
-  /* Quand le menu est actif, le faire apparaître */
   .nav-menu.active {
     left: 0;
+    display: flex;
   }
 
-    /* Style des liens dans le menu mobile */
-    .nav-item {
-      margin: 15px 0;
-      width: 100%;
-    }
+  .nav-item {
+    margin: 15px 0;
+    width: 100%;
+  }
 
-    .nav-item a {
-      display: block;
-      padding: 10px 0;
-      width: 100%;
-    }
+  .nav-item a {
+    display: block;
+    padding: 10px 0;
+    width: 100%;
+  }
 
   /* Assurer un style cohérent pour le header fixe */
   .header {
