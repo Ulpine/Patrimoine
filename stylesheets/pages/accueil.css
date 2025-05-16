@@ -34,10 +34,14 @@
 }
 
 .hero-banner h1 {
-  font-size: 3.5rem;
+  font-size: 3.8rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
   color: #fff;
+}
+
+.hero-tagline {
+  margin-top: 50px;
 }
 
 .hero-banner .hero-tagline {
