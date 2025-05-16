@@ -1,178 +1,186 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Initialisation AOS (Animation On Scroll)
-  AOS.init({
+  console.log('DOM entièrement chargé et analysé');
+
+  // Initialisation AOS (Animation On Scroll) si AOS est disponible
+  if (typeof AOS !== 'undefined') {
+    AOS.init({
       duration: 800,
       easing: 'ease',
       once: true,
       offset: 100
-  });
+    });
+  }
 
-  // Gestion du menu hamburger - CORRECTION
+  // Gestion du menu hamburger
   const hamburger = document.querySelector('.hamburger');
   const navMenu = document.querySelector('.nav-menu');
 
-  // Vérifiez que ces éléments existent
+  // Log pour déboguer
   console.log('Hamburger:', hamburger);
   console.log('Nav Menu:', navMenu);
 
   if (hamburger && navMenu) {
     hamburger.addEventListener('click', function() {
-      console.log('Hamburger clicked');
+      console.log('Hamburger cliqué');
       this.classList.toggle('active');
       navMenu.classList.toggle('active');
+    });
+
+    // Pour fermer le menu quand on clique sur un lien
+    document.querySelectorAll('.nav-item a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
     });
   } else {
     console.error("Impossible de trouver le menu hamburger ou la navigation");
   }
 
-  // Pour fermer le menu quand on clique sur un lien
-  document.querySelectorAll('.nav-item a').forEach(link => {
-    link.addEventListener('click', () => {
-      if (hamburger && navMenu) {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-      }
-    });
-  });
-
   // Gestion du header au scroll
   const header = document.querySelector('.header');
   let lastScrollTop = 0;
 
-  window.addEventListener('scroll', function() {
+  if (header) {
+    window.addEventListener('scroll', function() {
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
       if (scrollTop > 100) {
-          header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-          header.style.background = '#ffffff';
+        header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+        header.style.background = '#ffffff';
       } else {
-          header.style.boxShadow = 'none';
-          header.style.background = '#ffffff';
+        header.style.boxShadow = 'none';
+        header.style.background = '#ffffff';
       }
 
       lastScrollTop = scrollTop;
-  });
+    });
+  }
 
   // Formulaire de contact avec validation
   const contactForm = document.getElementById('contactForm');
 
   if (contactForm) {
-      contactForm.addEventListener('submit', function(e) {
-          e.preventDefault();
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
 
-          // Validation simple
-          const name = document.getElementById('name').value;
-          const email = document.getElementById('email').value;
-          const message = document.getElementById('message').value;
-          let isValid = true;
+      // Validation simple
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      let isValid = true;
 
-          if (name.trim() === '') {
-              isValid = false;
-              showError('name', 'Veuillez entrer votre nom');
-          } else {
-              clearError('name');
-          }
+      if (name.trim() === '') {
+        isValid = false;
+        showError('name', 'Veuillez entrer votre nom');
+      } else {
+        clearError('name');
+      }
 
-          if (email.trim() === '') {
-              isValid = false;
-              showError('email', 'Veuillez entrer votre email');
-          } else if (!isValidEmail(email)) {
-              isValid = false;
-              showError('email', 'Veuillez entrer un email valide');
-          } else {
-              clearError('email');
-          }
+      if (email.trim() === '') {
+        isValid = false;
+        showError('email', 'Veuillez entrer votre email');
+      } else if (!isValidEmail(email)) {
+        isValid = false;
+        showError('email', 'Veuillez entrer un email valide');
+      } else {
+        clearError('email');
+      }
 
-          if (message.trim() === '') {
-              isValid = false;
-              showError('message', 'Veuillez entrer votre message');
-          } else {
-              clearError('message');
-          }
+      if (message.trim() === '') {
+        isValid = false;
+        showError('message', 'Veuillez entrer votre message');
+      } else {
+        clearError('message');
+      }
 
-          if (isValid) {
-              // Simulation d'envoi
-              const submitBtn = contactForm.querySelector('button[type="submit"]');
-              const originalText = submitBtn.textContent;
+      if (isValid) {
+        // Simulation d'envoi
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
 
-              submitBtn.disabled = true;
-              submitBtn.textContent = 'Envoi en cours...';
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Envoi en cours...';
 
-              setTimeout(() => {
-                  submitBtn.textContent = 'Envoyé !';
-                  contactForm.reset();
+        setTimeout(() => {
+          submitBtn.textContent = 'Envoyé !';
+          contactForm.reset();
 
-                  // Message de succès
-                  const successMessage = document.createElement('div');
-                  successMessage.className = 'success-message';
-                  successMessage.textContent = 'Votre message a bien été envoyé. Je vous recontacterai dans les plus brefs délais.';
-                  contactForm.appendChild(successMessage);
+          // Message de succès
+          const successMessage = document.createElement('div');
+          successMessage.className = 'success-message';
+          successMessage.textContent = 'Votre message a bien été envoyé. Je vous recontacterai dans les plus brefs délais.';
+          contactForm.appendChild(successMessage);
 
-                  setTimeout(() => {
-                      successMessage.remove();
-                      submitBtn.disabled = false;
-                      submitBtn.textContent = originalText;
-                  }, 3000);
-              }, 1500);
-          }
-      });
+          setTimeout(() => {
+            successMessage.remove();
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+          }, 3000);
+        }, 1500);
+      }
+    });
   }
 
   function showError(fieldId, message) {
-      const field = document.getElementById(fieldId);
-      let errorElement = field.nextElementSibling;
+    const field = document.getElementById(fieldId);
+    if (!field) return;
 
-      if (!errorElement || !errorElement.classList.contains('error-message')) {
-          errorElement = document.createElement('div');
-          errorElement.className = 'error-message';
-          errorElement.style.color = '#e74c3c';
-          errorElement.style.fontSize = '0.8rem';
-          errorElement.style.marginTop = '5px';
-          field.parentNode.insertBefore(errorElement, field.nextSibling);
-      }
+    let errorElement = field.nextElementSibling;
 
-      errorElement.textContent = message;
-      field.style.borderColor = '#e74c3c';
+    if (!errorElement || !errorElement.classList.contains('error-message')) {
+      errorElement = document.createElement('div');
+      errorElement.className = 'error-message';
+      errorElement.style.color = '#e74c3c';
+      errorElement.style.fontSize = '0.8rem';
+      errorElement.style.marginTop = '5px';
+      field.parentNode.insertBefore(errorElement, field.nextSibling);
+    }
+
+    errorElement.textContent = message;
+    field.style.borderColor = '#e74c3c';
   }
 
   function clearError(fieldId) {
-      const field = document.getElementById(fieldId);
-      const errorElement = field.nextElementSibling;
+    const field = document.getElementById(fieldId);
+    if (!field) return;
 
-      if (errorElement && errorElement.classList.contains('error-message')) {
-          errorElement.remove();
-      }
+    const errorElement = field.nextElementSibling;
 
-      field.style.borderColor = '';
+    if (errorElement && errorElement.classList.contains('error-message')) {
+      errorElement.remove();
+    }
+
+    field.style.borderColor = '';
   }
 
   function isValidEmail(email) {
-      const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return re.test(String(email).toLowerCase());
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
   }
 
   // Défilement fluide pour les ancres
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-          e.preventDefault();
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
 
-          const targetId = this.getAttribute('href');
-          if (targetId === '#') return;
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
 
-          const targetElement = document.querySelector(targetId);
-          if (targetElement) {
-              const headerHeight = document.querySelector('.header').offsetHeight;
-              const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
+        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
 
-              window.scrollTo({
-                  top: targetPosition,
-                  behavior: 'smooth'
-              });
-          }
-      });
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
   });
 
-  // Animation de la section de consultation
+  // Animation de la section de consultation si elle existe
   const questionMessage = document.getElementById('question-message');
   const responseMessage = document.getElementById('response-message');
 
