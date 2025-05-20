@@ -23,6 +23,324 @@
   color: var(--body-text);
 }
 
+/* === Section taux de rémunération === */
+.taux-remuneration {
+  background-color: var(--white);
+  padding: 60px 0;
+}
+
+.taux-remuneration h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.taux-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.taux-card {
+  background-color: var(--light-gray);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.taux-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.taux-header {
+  padding: 20px;
+  text-align: center;
+  color: var(--white);
+  position: relative;
+}
+
+.taux-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.taux-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+  display: block;
+}
+
+.percent {
+  font-size: 1.5rem;
+  vertical-align: top;
+}
+
+.taux-details {
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+  background-color: var(--white);
+  height: 100%;
+}
+
+.taux-details li {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  padding-left: 25px;
+  position: relative;
+}
+
+.taux-details li:last-child {
+  margin-bottom: 0;
+}
+
+.taux-details i {
+  position: absolute;
+  left: 0;
+  top: 3px;
+}
+
+.taux-details .fa-check {
+  color: #2ecc71;
+}
+
+.taux-details .fa-exclamation-circle {
+  color: #e67e22;
+}
+
+.taux-details .fa-info-circle {
+  color: var(--primary-color);
+}
+
+.taux-disclaimer {
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: var(--light-text);
+  text-align: center;
+  padding: 15px;
+  border-radius: var(--radius);
+  background-color: var(--light-gray);
+}
+
+.taux-disclaimer a {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.taux-disclaimer a:hover {
+  text-decoration: underline;
+}
+
+/* Couleurs spécifiques pour chaque produit */
+.livret-a .taux-header {
+  background-color: #3498db;
+}
+
+.ldds .taux-header {
+  background-color: #27ae60;
+}
+
+.lep .taux-header {
+  background-color: #9b59b6;
+}
+
+.pel .taux-header {
+  background-color: #f1c40f;
+  color: #333;
+}
+
+.compte-terme .taux-header {
+  background-color: #e67e22;
+}
+
+.compte-courant .taux-header {
+  background-color: #95a5a6;
+}
+
+.inflation-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+}
+
+.inflation-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.inflation-text h2 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.intro-tagline {
+  font-style: italic;
+  color: var(--light-text);
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+/* Nouvelle comparaison inflation/livret A */
+.inflation-comparison {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.comparison-item {
+  flex: 1;
+  min-width: 150px;
+  padding: 15px;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.comparison-item.negative {
+  background-color: #fae5e5;
+  border-left: 4px solid #e74c3c;
+}
+
+.comparison-item.mixed {
+  background-color: #fef9e7;
+  border-left: 4px solid #f1c40f;
+}
+
+.comparison-item.positive {
+  background-color: #e8f8f5;
+  border-left: 4px solid #2ecc71;
+}
+
+.comparison-header {
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.comparison-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.comparison-item.negative .comparison-value {
+  color: #e74c3c;
+}
+
+.comparison-item.mixed .comparison-value {
+  color: #f39c12;
+}
+
+.comparison-item.positive .comparison-value {
+  color: #27ae60;
+}
+
+.comparison-result {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.comparison-explanation {
+  font-size: 0.8rem;
+  color: var(--light-text);
+}
+
+.cta-text {
+  font-weight: 500;
+  margin-top: 25px;
+  color: var(--primary-color);
+}
+
+.inflation-visual {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inflation-chart {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 300px;
+}
+
+.chart-bar {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.chart-comparison {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 200px;
+}
+
+.chart-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+}
+
+.bar {
+  width: 80px;
+  border-radius: 5px 5px 0 0;
+}
+
+.chart-bar.account .bar {
+  background: linear-gradient(to top, #e74c3c, #c0392b);
+}
+
+.chart-bar.livret .bar {
+  background: linear-gradient(to top, #2ecc71, #27ae60);
+}
+
+.bar-label {
+  position: absolute;
+  bottom: -25px;
+  font-size: 0.9rem;
+  color: var(--body-text);
+  width: 100%;
+  text-align: center;
+}
+
+.chart-bar .amount {
+  position: absolute;
+  top: -25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  width: 100%;
+  text-align: center;
+}
+
+.chart-caption {
+  margin-top: 35px;
+  font-style: italic;
+  color: var(--light-text);
+  text-align: center;
+}
+
+/* Responsive design */
+
+
 /* === Section guides === */
 .guides-financiers {
   background-color: var(--white);

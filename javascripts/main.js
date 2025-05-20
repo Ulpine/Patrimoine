@@ -185,72 +185,50 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Animation de la section de consultation si elle existe
-  const questionMessage = document.getElementById('question-message');
-  const responseMessage = document.getElementById('response-message');
+  document.addEventListener('DOMContentLoaded', function() {
+    // Animation subtile d'apparition
+    const ctaContent = document.querySelector('.cta-content');
 
-  // Subtle hover effect for messages
-  const messages = document.querySelectorAll('.message');
-  messages.forEach(message => {
-    message.addEventListener('mouseenter', () => {
-      message.style.transform = 'translateY(-5px)';
-      message.style.boxShadow = message.classList.contains('message-question')
-        ? '0 15px 35px rgba(0, 0, 0, 0.1)'
-        : '0 15px 35px rgba(52, 152, 219, 0.3)';
-    });
-
-    message.addEventListener('mouseleave', () => {
-      message.style.transform = 'translateY(0)';
-      message.style.boxShadow = message.classList.contains('message-question')
-        ? '0 10px 30px rgba(0, 0, 0, 0.05)'
-        : '0 10px 30px rgba(52, 152, 219, 0.2)';
-    });
-  });
-
-  // Show messages with staggered timing
-  if (questionMessage && responseMessage) {
-    setTimeout(() => {
-      questionMessage.classList.add('message-visible');
-
-      setTimeout(() => {
-        responseMessage.classList.add('message-visible');
-      }, 700);
-    }, 300);
-
-    // Optional: Parallax effect on mouse move
-    const consultationContainer = document.querySelector('.consultation-container');
-    if (consultationContainer) {
-      document.addEventListener('mousemove', e => {
-        const avatar = document.querySelector('.avatar-wrapper');
-        if (!avatar || !consultationContainer) return;
-
-        const containerRect = consultationContainer.getBoundingClientRect();
-        const centerX = containerRect.width / 2;
-        const centerY = containerRect.height / 2;
-
-        const mouseX = e.clientX - containerRect.left;
-        const mouseY = e.clientY - containerRect.top;
-
-        const moveX = (mouseX - centerX) / 30;
-        const moveY = (mouseY - centerY) / 30;
-
-        avatar.style.transform = `translate(${moveX}px, ${moveY}px)`;
-
-        messages.forEach((message, index) => {
-          const factor = index === 0 ? -0.5 : -0.3;
-          message.style.transform = `translateY(0) translate(${moveX * factor}px, ${moveY * factor}px)`;
+    if (ctaContent) {
+      // Définition de l'observateur d'intersection
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('cta-visible');
+            observer.unobserve(entry.target);
+          }
         });
-      });
+      }, { threshold: 0.2 });
 
-      // Reset transforms when mouse leaves
-      consultationContainer.addEventListener('mouseleave', () => {
-        const avatar = document.querySelector('.avatar-wrapper');
-        if (avatar) avatar.style.transform = 'translate(0, 0)';
+      // Ajout des styles pour l'animation
+      ctaContent.style.opacity = '0';
+      ctaContent.style.transform = 'translateY(30px)';
+      ctaContent.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
 
-        messages.forEach(message => {
-          message.style.transform = 'translateY(0)';
-        });
+      // Ajout de la classe pour l'animation
+      document.head.insertAdjacentHTML('beforeend', `
+        <style>
+          .cta-visible {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+          }
+        </style>
+      `);
+
+      // Observer la section
+      observer.observe(ctaContent);
+    }
+
+    // Scroll doux vers le formulaire de contact
+    const ctaButton = document.querySelector('.cta-button');
+    if (ctaButton) {
+      ctaButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        const contactForm = document.querySelector(this.getAttribute('href'));
+        if (contactForm) {
+          contactForm.scrollIntoView({ behavior: 'smooth' });
+        }
       });
     }
-  }
+  });
 });

@@ -258,7 +258,7 @@ strong {
   margin: 0; /* Enlève la marge */
   height: 22px; /* Hauteur fixe pour faciliter l'alignement */
   width: 30px; /* Largeur fixe */
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   justify-content: space-between; /* Espacement régulier des barres */
   align-self: center; /* Centrage vertical */

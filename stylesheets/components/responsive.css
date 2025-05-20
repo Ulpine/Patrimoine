@@ -272,3 +272,35 @@
 .services-grid, .testimonial-slider, .contact-container {
   animation: fadeIn 0.8s ease-out forwards;
 }
+
+@media (max-width: 768px) {
+  .inflation-content {
+    flex-direction: column;
+  }
+
+  .inflation-comparison {
+    flex-direction: column;
+  }
+
+  .comparison-item {
+    min-width: 100%;
+  }
+
+  .chart-bar .bar {
+    width: 60px;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .taux-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+/* === Section introduction sur l'inflation === */
+.inflation-intro {
+  background-color: var(--light-gray);
+  padding: 60px 0;
+  margin-bottom: 30px;
+}
