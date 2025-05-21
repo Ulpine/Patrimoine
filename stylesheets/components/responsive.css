@@ -291,16 +291,128 @@
   }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Responsive design */
+@media (max-width: 992px) {
   .taux-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .compte-courant {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .livret-a {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .ldds {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .lep {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .pel {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .inflation {
+    grid-column: 2;
+    grid-row: 3;
   }
 }
 
-/* === Section introduction sur l'inflation === */
-.inflation-intro {
-  background-color: var(--light-gray);
-  padding: 60px 0;
-  margin-bottom: 30px;
+@media (max-width: 768px) {
+  .taux-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .compte-courant,
+  .livret-a,
+  .ldds,
+  .lep,
+  .pel,
+  .inflation {
+    grid-column: 1;
+  }
+
+  .compte-courant {
+    grid-row: 1;
+  }
+
+  .livret-a {
+    grid-row: 2;
+  }
+
+  .ldds {
+    grid-row: 3;
+  }
+
+  .lep {
+    grid-row: 4;
+  }
+
+  .pel {
+    grid-row: 5;
+  }
+
+  .inflation {
+    grid-row: 6;
+  }
+}
+
+/* Responsive design */
+/* Responsive */
+@media (max-width: 992px) {
+  .inflation-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .inflation-text, .inflation-visual {
+    max-width: 100%;
+  }
+
+  .chart-container {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .chart-area {
+    margin-left: 40px;
+  }
+
+  .y-axis {
+    left: -40px;
+    width: 40px;
+  }
+
+  .bar-column {
+    width: 70px;
+  }
+
+  .bar {
+    width: 45px;
+  }
+
+  .bar-value {
+    font-size: 0.8rem;
+  }
+
+  .bar-label {
+    font-size: 0.85rem;
+  }
+
+  .legend-item {
+    margin-bottom: 5px;
+  }
 }
