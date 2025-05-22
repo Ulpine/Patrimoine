@@ -300,7 +300,7 @@
 }
 
 .cta-button:hover {
-  background-color: #1d4ed8;
+  background-color: #c0a080;
   transform: translateY(-3px);
   box-shadow: 0 15px 20px -3px rgba(37, 99, 235, 0.3);
 }
