@@ -147,106 +147,59 @@
       </div>
     </section>
 
-<!-- Correction de la section inflation-intro -->
-<section class="inflation-intro">
-  <div class="container">
-    <div class="inflation-content">
-      <div class="inflation-text">
-        <h2>Pourquoi votre argent s'évapore sur votre compte courant</h2>
-        <p class="intro-tagline">L'inflation silencieuse qui érode votre patrimoine jour après jour</p>
-        <p>Saviez-vous qu'en laissant votre argent dormir sur un compte courant, vous perdez concrètement du pouvoir d'achat chaque année ?</p>
-        <p>Avec une inflation moyenne de <strong>2% par an</strong>, 10 000€ non investis aujourd'hui ne vaudront plus que <strong>8 203€</strong> en pouvoir d'achat réel dans 10 ans.</p>
-        <div class="inflation-comparison">
-          <div class="comparison-item negative">
-            <div class="comparison-header">Sur un compte courant</div>
-            <div class="comparison-value">-18%</div>
-            <div class="comparison-result">8 203€</div>
-            <div class="comparison-explanation">Perte nette de pouvoir d'achat</div>
+    <section class="inflation-intro">
+      <div class="container">
+        <div class="inflation-content">
+          <div class="inflation-text">
+            <h2>Pourquoi votre argent s'évapore sur votre compte courant</h2>
+            <p class="intro-tagline">L'inflation silencieuse qui érode votre patrimoine jour après jour</p>
+            <p>Saviez-vous qu'en laissant votre argent dormir sur un compte courant, vous perdez concrètement du pouvoir d'achat chaque année ?</p>
+            <p>Prenons l'exemple d'une inflation moyenne de <strong>2% par an</strong>, 10 000€ non investis aujourd'hui ne vaudront plus que <strong>9 047€</strong> en pouvoir d'achat réel dans 5 ans, et seulement <strong>8 203€</strong> dans 10 ans.</p>
+            <p class="cta-text">Découvrez dans nos guides comment faire travailler votre argent intelligemment et préserver votre patrimoine de l'érosion monétaire.</p>
           </div>
-          <div class="comparison-item mixed">
-            <div class="comparison-header">Sur un Livret A (2.5%)</div>
-            <div class="comparison-value">+5%</div>
-            <div class="comparison-result">12 800€</div>
-            <div class="comparison-explanation">Valeur nominale après 10 ans</div>
-          </div>
-          <div class="comparison-item positive">
-            <div class="comparison-header">Pouvoir d'achat réel Livret A</div>
-            <div class="comparison-value">+0.5%</div>
-            <div class="comparison-result">10 513€</div>
-            <div class="comparison-explanation">Légèrement supérieur à l'inflation</div>
-          </div>
-        </div>
-        <p class="cta-text">Découvrez dans nos guides comment faire travailler votre argent intelligemment et préserver votre patrimoine de l'érosion monétaire.</p>
-      </div>
 
-      <div class="inflation-visual">
-        <div class="chart-container">
-          <h3 class="chart-title">Évolution du pouvoir d'achat sur 10 ans</h3>
-          <div class="chart-area">
-            <!-- Axe Y -->
-            <div class="y-axis">
-              <div class="y-tick"><span>5 000€</span></div>
-              <div class="y-tick"><span>7 500€</span></div>
-              <div class="y-tick"><span>10 000€</span></div>
-              <div class="y-tick"><span>12 500€</span></div>
-              <div class="y-tick"><span>15 000€</span></div>
-            </div>
+          <div class="inflation-visual">
+            <div class="chart-container">
+              <h3 class="chart-title">Évolution du pouvoir d'achat avec l'inflation(2% par an)</h3>
 
-            <div class="bars-container">
-              <!-- Barre 1 - Montant initial -->
-              <div class="bar-column">
-                <div class="bar-wrapper">
+              <div class="chart-wrapper">
+                <div class="inflation-bar">
                   <div class="bar-value">10 000€</div>
-                  <div class="bar initial" style="height: 80%;"></div>
+                  <div class="bar-element today" data-value="10000"></div>
                 </div>
-                <div class="bar-label">Montant initial</div>
-                <div class="bar-sublabel">Aujourd'hui</div>
-              </div>
 
-              <!-- Barre 2 - Compte courant -->
-              <div class="bar-column">
-                <div class="bar-wrapper">
+                <div class="inflation-bar">
+                  <div class="bar-value">9 047€</div>
+                  <div class="bar-element year5" data-value="9047"></div>
+                </div>
+
+                <div class="inflation-bar">
                   <div class="bar-value">8 203€</div>
-                  <div class="bar account" style="height: 65.6%;"></div>
+                  <div class="bar-element year10" data-value="8203"></div>
                 </div>
-                <div class="bar-label">Compte courant</div>
-                <div class="bar-sublabel">Dans 10 ans</div>
               </div>
 
-              <!-- Barre 3 - Livret A -->
-              <div class="bar-column">
-                <div class="bar-wrapper">
-                  <div class="bar-value">10 513€</div>
-                  <div class="bar livret" style="height: 84%;"></div>
+              <div class="chart-footer">
+                <div class="chart-legend">
+                  <div class="legend-item">
+                    <span class="legend-color today"></span>
+                    <span class="legend-text">Valeur actuelle</span>
+                  </div>
+                  <div class="legend-item">
+                    <span class="legend-color year5"></span>
+                    <span class="legend-text">Perte sur 5 ans (-9.5%)</span>
+                  </div>
+                  <div class="legend-item">
+                    <span class="legend-color year10"></span>
+                    <span class="legend-text">Perte sur 10 ans (-18%)</span>
+                  </div>
                 </div>
-                <div class="bar-label">Livret A</div>
-                <div class="bar-sublabel">Dans 10 ans</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="chart-footer">
-            <div class="chart-caption">Pouvoir d'achat réel avec inflation à 2%</div>
-            <div class="chart-legend">
-              <div class="legend-item">
-                <span class="legend-color initial"></span>
-                <span class="legend-text">Montant de référence</span>
-              </div>
-              <div class="legend-item">
-                <span class="legend-color account"></span>
-                <span class="legend-text">Perte due à l'inflation</span>
-              </div>
-              <div class="legend-item">
-                <span class="legend-color livret"></span>
-                <span class="legend-text">Gain avec intérêts</span>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <section class="services">
       <div class="container">

@@ -3,7 +3,9 @@
 @import "pages/accueil.css";
 @import "pages/contact.css";
 @import "components/articles.css";
+@import "components/inflation.css";
 @import "components/responsive.css";
+@import "components/taux.css";
 
 /* Styles globaux et variables */
 :root {
@@ -17,6 +19,9 @@
   --white: #ffffff;
   --light-bg: #eef2f5; /* Fond légèrement teinté bleu très pâle */
   --border-color: #d1d8e0; /* Gris-bleu très pâle pour bordures */
+  --today-color: #0d6efd;
+  --year5-color: #20c997;
+  --year10-color: #fd7e14;
 
   /* Typographie */
   --body-font: 'Nunito Sans', 'Montserrat', sans-serif; /* Plus moderne et lisible */
@@ -73,7 +78,7 @@ img {
   width: 90%;
   max-width: var(--container-width);
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 20px;
 }
 
 /* Typographie */

@@ -232,39 +232,3 @@
   }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .content-section h2 {
-    font-size: 1.8rem;
-  }
-
-  .content-section h3 {
-    font-size: 1.3rem;
-  }
-
-  .content-section p {
-    font-size: 1rem;
-  }
-
-  .content-section ul {
-    margin-left: 15px;
-  }
-
-  .schema-container img {
-    max-width: 100%;
-  }
-
-  .quiz-options {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .quiz-option {
-    width: 100%;
-    padding: 12px 15px;
-  }
-
-  .quiz-container {
-    padding: 20px;
-  }
-}
