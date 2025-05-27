@@ -1,7 +1,24 @@
 /* ====================================
    DESKTOP LARGE (992px - 1199px)
    ==================================== */
-   @media (max-width: 992px) {
+   @media (max-width: 1199px) {
+    .container {
+      max-width: 960px;
+      padding: 0 20px;
+    }
+
+    .taux-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .services-grid {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+  }
+
+  @media (max-width: 992px) {
     /* Typography */
     h1 {
       font-size: 2.3rem;
@@ -14,6 +31,14 @@
     /* Layout Components */
     .page-header {
       padding: 120px 0 50px;
+    }
+
+    .main-header {
+      padding: 100px 0 40px;
+    }
+
+    .main-header h1 {
+      font-size: 2.2rem;
     }
 
     /* Hero Section */
@@ -48,6 +73,7 @@
     .taux-grid {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: auto;
+      gap: 20px;
     }
 
     .compte-courant { grid-column: 1; grid-row: 1; }
@@ -56,6 +82,12 @@
     .lep { grid-column: 2; grid-row: 2; }
     .pel { grid-column: 1; grid-row: 3; }
     .inflation { grid-column: 2; grid-row: 3; }
+
+    /* Services Grid */
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
 
     /* Inflation Content */
     .inflation-content {
@@ -82,6 +114,10 @@
       padding: 60px 0;
     }
 
+    .container {
+      padding: 0 20px;
+    }
+
     main section:first-of-type,
     .hero,
     .hero-banner,
@@ -93,6 +129,10 @@
     .page-header {
       margin-top: 0;
       padding-top: 85px;
+    }
+
+    .main-header {
+      padding: 100px 0 40px;
     }
 
     /* Header & Navigation */
@@ -114,15 +154,16 @@
     /* Hamburger Menu */
     .hamburger {
       display: flex !important;
-      align-items: center;
-      margin-right: 0;
+      flex-direction: column;
+      cursor: pointer;
+      z-index: 1002;
     }
 
     .bar {
       display: block;
-      width: 30px;
+      width: 25px;
       height: 3px;
-      margin: 6px 0;
+      margin: 3px 0;
       transition: all 0.3s ease;
       background-color: var(--primary-color);
       border-radius: 3px;
@@ -130,7 +171,7 @@
 
     /* Hamburger Animation */
     .hamburger.active .bar:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
+      transform: translateY(6px) rotate(45deg);
     }
 
     .hamburger.active .bar:nth-child(2) {
@@ -138,7 +179,7 @@
     }
 
     .hamburger.active .bar:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
+      transform: translateY(-6px) rotate(-45deg);
     }
 
     /* Mobile Navigation Menu */
@@ -175,8 +216,9 @@
 
     .nav-item a {
       display: block;
-      padding: 10px 0;
+      padding: 15px 20px;
       width: 100%;
+      font-size: 1.1rem;
     }
 
     /* Hero Sections */
@@ -286,13 +328,71 @@
     .pel { grid-row: 5; }
     .inflation { grid-row: 6; }
 
+    .services-grid {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+
     .news-grid {
       grid-template-columns: 1fr;
+    }
+
+    /* Taux Cards */
+    .taux-card {
+      padding: 20px;
+    }
+
+    .taux-header {
+      margin-bottom: 15px;
+    }
+
+    .taux-value {
+      font-size: 1.8rem;
+    }
+
+    /* Service Cards */
+    .service-card {
+      padding: 25px;
+      text-align: center;
+    }
+
+    .service-icon {
+      font-size: 2rem;
+      margin-bottom: 15px;
     }
 
     /* Charts */
     .chart-bar .bar {
       width: 60px;
+    }
+
+    .chart-wrapper {
+      padding: 0 10px;
+    }
+
+    .inflation-bar {
+      margin-bottom: 15px;
+    }
+
+    .bar-value {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .chart-legend {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Contact Section */
+    .contact-container {
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .contact-info {
+      text-align: center;
     }
 
     /* CTA Section */
@@ -317,6 +417,20 @@
     /* FAQ */
     .faq-question h3 {
       font-size: 1rem;
+    }
+
+    /* Footer */
+    .footer-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 30px;
+    }
+
+    .footer-links ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
     }
   }
 
@@ -343,7 +457,7 @@
     }
 
     .bar-value {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
     }
 
     .bar-label {
@@ -351,7 +465,26 @@
     }
 
     .legend-item {
-      margin-bottom: 5px;
+      margin-bottom: 8px;
+    }
+
+    /* Taux Cards */
+    .taux-card {
+      padding: 18px;
+    }
+
+    .taux-value {
+      font-size: 1.6rem;
+    }
+
+    .taux-details li {
+      font-size: 0.9rem;
+      padding: 6px 0;
+    }
+
+    /* Service Cards */
+    .service-card {
+      padding: 20px;
     }
   }
 
@@ -362,6 +495,10 @@
     /* Base Layout */
     section {
       padding: 40px 0;
+    }
+
+    .container {
+      padding: 0 15px;
     }
 
     /* Typography */
@@ -399,10 +536,29 @@
       padding: 100px 0 40px;
     }
 
+    .main-header {
+      padding: 90px 0 30px;
+    }
+
+    .main-header h1 {
+      font-size: 1.8rem;
+      line-height: 1.3;
+    }
+
+    .main-header p {
+      font-size: 1rem;
+    }
+
     /* Hamburger Menu Adjustments */
     .hamburger {
       width: 28px;
       height: 20px;
+    }
+
+    .bar {
+      width: 22px;
+      height: 2px;
+      margin: 3px 0;
     }
 
     .nav-menu {
@@ -415,6 +571,11 @@
       height: calc(100vh - 50px);
     }
 
+    .nav-item a {
+      padding: 12px 15px;
+      font-size: 1rem;
+    }
+
     /* Hero Section */
     .hero {
       padding-top: 100px;
@@ -425,6 +586,240 @@
     .hero-banner,
     .page-header {
       padding-top: 75px !important;
+    }
+
+    /* Taux Section */
+    .taux-remuneration {
+      padding: 40px 0;
+    }
+
+    .taux-card {
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+
+    .taux-header {
+      margin-bottom: 12px;
+    }
+
+    .taux-header h3 {
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+    }
+
+    .taux-value {
+      font-size: 1.4rem;
+    }
+
+    .taux-details {
+      margin: 0;
+      padding: 0;
+    }
+
+    .taux-details li {
+      font-size: 0.85rem;
+      padding: 4px 0;
+      margin-bottom: 3px;
+    }
+
+    .taux-disclaimer {
+      margin-top: 25px;
+      padding: 15px;
+    }
+
+    .taux-disclaimer p {
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+
+    /* Services Section */
+    .services {
+      padding: 40px 0;
+    }
+
+    .services-grid {
+      margin-top: 30px;
+      gap: 20px;
+    }
+
+    .service-card {
+      padding: 20px 15px;
+    }
+
+    .service-icon {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+
+    .service-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    /* Inflation Section */
+    .inflation-intro {
+      padding: 40px 0;
+    }
+
+    .inflation-content {
+      gap: 25px;
+    }
+
+    .inflation-text h2 {
+      font-size: 1.4rem;
+      line-height: 1.3;
+      margin-bottom: 15px;
+    }
+
+    .intro-tagline {
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    .inflation-text p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .cta-text {
+      font-size: 0.9rem;
+      margin-top: 15px;
+    }
+
+    /* Chart */
+    .chart-container {
+      margin-top: 25px;
+    }
+
+    .chart-title {
+      font-size: 1rem;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .chart-wrapper {
+      padding: 15px 10px;
+    }
+
+    .inflation-bar {
+      margin-bottom: 12px;
+    }
+
+    .bar-value {
+      font-size: 0.9rem;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    .bar-element {
+      height: 35px;
+      border-radius: 4px;
+    }
+
+    .chart-footer {
+      margin-top: 15px;
+    }
+
+    .chart-legend {
+      gap: 8px;
+    }
+
+    .legend-item {
+      font-size: 0.8rem;
+    }
+
+    .legend-color {
+      width: 12px;
+      height: 12px;
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 40px 0;
+    }
+
+    .contact h2 {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+
+    .contact-container {
+      gap: 25px;
+    }
+
+    .contact-info p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .contact-details p {
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      font-size: 0.9rem;
+      margin-bottom: 5px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      padding: 10px 12px;
+      font-size: 0.9rem;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 30px 0 20px;
+    }
+
+    .footer-content {
+      gap: 20px;
+    }
+
+    .footer-logo a {
+      font-size: 1.2rem;
+    }
+
+    .footer-links h4,
+    .footer-contact h4 {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .footer-links ul {
+      gap: 10px;
+    }
+
+    .footer-links a,
+    .footer-contact a {
+      font-size: 0.85rem;
+    }
+
+    .footer-bottom {
+      margin-top: 20px;
+      padding-top: 15px;
+    }
+
+    .footer-bottom p {
+      font-size: 0.75rem;
+      line-height: 1.4;
+      margin-bottom: 5px;
     }
 
     /* Grids */
@@ -462,17 +857,53 @@
      MOBILE EXTRA SMALL (< 480px)
      ==================================== */
   @media (max-width: 480px) {
+    .container {
+      padding: 0 10px;
+    }
+
+    .main-header h1 {
+      font-size: 1.6rem;
+    }
+
+    .taux-card {
+      padding: 12px;
+    }
+
+    .taux-value {
+      font-size: 1.3rem;
+    }
+
+    .service-card {
+      padding: 15px 10px;
+    }
+
+    .inflation-text h2 {
+      font-size: 1.3rem;
+    }
+
+    .chart-wrapper {
+      padding: 10px 5px;
+    }
+
+    .bar-element {
+      height: 30px;
+    }
+
+    .legend-item {
+      font-size: 0.75rem;
+    }
+
     .cta-heading {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
     }
 
     .cta-section {
-      padding: 3rem 0;
+      padding: 2.5rem 0;
     }
   }
 
   /* ====================================
-     ANIMATIONS
+     ANIMATIONS & UTILITIES
      ==================================== */
   @keyframes fadeInGeneral {
     from {
@@ -491,39 +922,54 @@
     animation: fadeIn 0.8s ease-out forwards;
   }
 
-  /* Responsive */
-@media (max-width: 768px) {
-  .content-section h2 {
-    font-size: 1.8rem;
+  /* Hide elements on mobile when needed */
+  @media (max-width: 768px) {
+    .desktop-only {
+      display: none !important;
+    }
   }
 
-  .content-section h3 {
-    font-size: 1.3rem;
+  @media (min-width: 769px) {
+    .mobile-only {
+      display: none !important;
+    }
   }
 
-  .content-section p {
-    font-size: 1rem;
+  /* Accessibility improvements for mobile */
+  @media (max-width: 768px) {
+    /* Ensure touch targets are at least 44px */
+    .nav-item a,
+    .btn,
+    .service-card,
+    .hamburger {
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    /* Improve text contrast on small screens */
+    .taux-details li {
+      line-height: 1.5;
+    }
+
+    .service-card p {
+      line-height: 1.6;
+    }
   }
 
-  .content-section ul {
-    margin-left: 15px;
-  }
+  /* Print styles */
+  @media print {
+    .header,
+    .footer,
+    .nav-menu,
+    .hamburger {
+      display: none !important;
+    }
 
-  .schema-container img {
-    max-width: 100%;
-  }
+    .main-header {
+      padding-top: 20px !important;
+    }
 
-  .quiz-options {
-    flex-direction: column;
-    gap: 15px;
+    section {
+      page-break-inside: avoid;
+    }
   }
-
-  .quiz-option {
-    width: 100%;
-    padding: 12px 15px;
-  }
-
-  .quiz-container {
-    padding: 20px;
-  }
-}
