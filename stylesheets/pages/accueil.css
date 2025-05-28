@@ -83,6 +83,14 @@
   margin-top: 2.5rem;
 }
 
+.hero-cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
 .hero-banner .btn-primary {
   background-color: var(--accent-color);
   color: #fff;
@@ -104,13 +112,14 @@
   border-radius: 30px;
   border: 2px solid #fff;
   transition: all 0.3s ease;
-  margin-left: 15px;
+  /* margin-left: 15px; */
 }
 
 .hero-banner .btn-secondary:hover {
   background-color: #fff;
   color: var(--primary-color);
 }
+
 
 /* Section mythes */
 .myths {
