@@ -426,9 +426,11 @@
     .chart-container {
       background: #f8f9fa;
       border-radius: 12px;
-      padding: 20px 15px;
+      padding: 15px 10px; /* Réduire le padding horizontal */
       margin-top: 0;
       width: 100%;
+      max-width: 100%;
+      overflow: hidden;
     }
 
     .chart-title {
@@ -436,24 +438,36 @@
       text-align: center;
       margin-bottom: 15px;
       font-weight: 600;
+      padding: 0 5px; /* Ajouter du padding pour éviter la coupure */
     }
 
     .chart-wrapper {
-      padding: 10px 5px;
+      display: flex;
+      justify-content: space-between; /* Au lieu de space-around */
+      align-items: flex-end;
+      height: 300px; /* Réduire la hauteur sur mobile */
+      gap: 15px; /* Réduire le gap drastiquement */
+      padding: 0 10px; /* Ajouter du padding pour éviter les bords */
+      max-width: 100%;
+      overflow: hidden; /* Empêcher le débordement */
     }
 
     .inflation-bar {
-      margin-bottom: 12px;
-      background: white;
-      border-radius: 8px;
-      padding: 12px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      width: calc(33.333% - 10px); /* Utiliser la largeur disponible */
+      max-width: 80px; /* Largeur max pour éviter qu'elles soient trop larges */
+      min-width: 50px; /* Largeur min pour la lisibilité */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
     }
 
     .bar-value {
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-bottom: 5px;
+      font-weight: bold;
+      font-size: 0.9rem; /* Légèrement plus petit */
+      color: var(--primary-color);
+      margin-bottom: 8px;
+      white-space: nowrap;
       text-align: center;
     }
 
@@ -461,31 +475,46 @@
       height: 35px;
       border-radius: 4px;
       position: relative;
-      background: linear-gradient(135deg, var(--bar-color, #4CAF50), var(--bar-color-light, #66BB6A));
     }
 
     .chart-legend {
       flex-direction: column;
       gap: 8px;
       margin-top: 15px;
+      padding: 0 5px;
     }
 
     .legend-item {
+      background-color: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 8px; /* Plus petit radius */
+      padding: 8px 12px; /* Padding réduit */
       display: flex;
       align-items: center;
       gap: 8px;
-      font-size: 0.8rem;
+      min-width: auto; /* Supprimer la largeur min fixe */
+      width: 100%; /* Prendre toute la largeur disponible */
+      justify-content: flex-start; /* Aligner à gauche au lieu du centre */
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      font-size: 0.85rem;
     }
 
     .legend-color {
       width: 12px;
       height: 12px;
-      border-radius: 3px;
+      border-radius: 50%;
+      flex-shrink: 0; /* Empêcher la réduction */
     }
 
-    .legend-color.today { background: #4CAF50; }
-    .legend-color.year5 { background: #FF9800; }
-    .legend-color.year10 { background: #F44336; }
+    .legend-color.today { background-color: var(--today-color); }
+    .legend-color.year5 { background-color: var(--year5-color); }
+    .legend-color.year10 { background-color: var(--year10-color); }
+
+    .legend-text {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #343a40;
+    }
 
     /* Timeline Mobile */
     .timeline::before {
@@ -692,12 +721,30 @@
     }
 
     /* Chart ultra compact */
+    .chart-wrapper {
+      height: 250px; /* Encore plus petit */
+      gap: 8px; /* Gap minimal */
+      padding: 0 5px;
+    }
+
+    .inflation-bar {
+      width: calc(33.333% - 6px);
+      min-width: 45px;
+      max-width: 70px;
+    }
+
+    .bar-value {
+      font-size: 0.8rem;
+      margin-bottom: 6px;
+    }
+
     .chart-container {
-      padding: 12px;
+      padding: 12px 8px;
     }
 
     .chart-title {
       font-size: 0.9rem;
+      margin-bottom: 12px;
     }
 
     .bar-element {
@@ -705,7 +752,17 @@
     }
 
     .legend-item {
-      font-size: 0.75rem;
+      padding: 6px 10px;
+      font-size: 0.8rem;
+    }
+
+    .legend-color {
+      width: 10px;
+      height: 10px;
+    }
+
+    .legend-text {
+      font-size: 0.8rem;
     }
 
     /* CTA compact */
