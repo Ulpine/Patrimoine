@@ -123,7 +123,7 @@
 
 /* Section mythes */
 .myths {
-  background-color: var(--white);
+  background-color: var(--light-bg);
   position: relative;
 }
 
@@ -182,7 +182,7 @@
 
 /* Section approche */
 .approach {
-  background-color: var(--light-bg);
+  background-color: var(--white);
   position: relative;
 }
 
