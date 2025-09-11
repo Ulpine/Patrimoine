@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Plan du site — structure et liens vers les pages du site Patrimoine" />
+  <title>Plan du site — Patrimoine</title>
+
+  <!-- Feuilles de style (ajuste les chemins si besoin) -->
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/pages/plandusite.css"
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Préchargement des polices -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="javascripts/main.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo">
+            <a href="index.html" class="logo-link">
+                <span class="logo-text">Léo TREMOUREUX</span>
+                <!-- <span class="logo-subtitle">Conseil en Investissements Financiers</span> -->
+            </a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html">Accueil</a></li>
+            <li class="nav-item"><a href="presentation.html">À propos</a></li>
+            <li class="nav-item"><a href="actualites.html">Actualités</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-cta">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Section Hero avec bannière -->
+<section class="hero-banner">
+  <div class="hero-overlay"></div>
+  <div class="container">
+      <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
+          <h1>Plan du site</h1>
+          <p class="hero-tagline">Structure des pages et liens principaux du site</p>
+      </div>
+  </div>
+</section>
+
+  <main role="main" aria-labelledby="sitemap-heading">
+    <h2 id="sitemap-heading" style="font-size:1.15rem;margin-top:0">Navigation principale</h2>
+
+    <details open>
+      <summary>Pages publiques</summary>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="actualites.html">Actualités</a></li>
+        <li><a href="presentation.html">Présentation</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Pages produits / services</summary>
+      <ul>
+        <li><a href="assurance-vie.html">Assurance-vie</a></li>
+        <li><a href="scpi.html">SCPI</a></li>
+        <li><a href="per.html">PER</a></li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Pages légales & confidentialité</summary>
+      <ul>
+        <li><a href="mentions_légales.html">Mentions légales</a></li>
+        <li><a href="données_personnelles.html">Données personnelles</a></li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Autres</summary>
+      <ul>
+        <li><a href="plan_du_site.html">Plan du site</a></li>
+      </ul>
+    </details>
+  </main>
+  <footer class="footer">
+      <div class="container">
+          <div class="footer-content">
+              <div class="footer-logo">
+                  <a href="index.html">Léo TREMOUREUX</a>
+                  <p>Conseiller en Investissements Financiers</p>
+              </div>
+              <div class="footer-links">
+                  <h4>Navigation</h4>
+                  <ul>
+                      <li><a href="index.html">Accueil</a></li>
+                      <li><a href="presentation.html">À propos</a></li>
+                      <li><a href="actualites.html">Actualités</a></li>
+                  </ul>
+              </div>
+              <div class="footer-legal">
+                  <h4>Informations légales</h4>
+                  <ul>
+                      <li><a href="plan_du_site.html">Plan du site</a></li>
+                      <li><a href="mentions_legales.html">Mentions légales</a></li>
+                      <li><a href="données_personnelles.html">Politique de confidentialité</a></li>
+                      <li><a href="contact.html">Contact</a></li>
+                  </ul>
+              </div>
+              <div class="footer-contact">
+                  <h4>Contact</h4>
+                  <p>Email: <a href="mailto:contact@leotremoureux.fr">contact@leotremoureux.fr</a></p>
+                  <p>Téléphone: <a href="tel:+33600000000">06 00 00 00 00</a></p>
+                  <div class="footer-socials">
+                      <a href="#" class="social-link" aria-label="LinkedIn">
+                          <i class="fab fa-linkedin-in"></i>
+                      </a>
+                  </div>
+              </div>
+          </div>
+          <div class="footer-bottom">
+              <p>&copy; 2025 Léo TREMOUREUX - Conseiller en Investissements Financiers. Tous droits réservés.</p>
+              <p>SIRET: XXXXXXXXX - Immatriculé à l'ORIAS sous le n° XXXXXXXX</p>
+          </div>
+      </div>
+  </footer>
+</body>
+</html>

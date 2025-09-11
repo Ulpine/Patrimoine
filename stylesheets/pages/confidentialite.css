@@ -1,0 +1,382 @@
+/* CSS spécifique pour la page Politique de Confidentialité */
+
+/* Section Hero Banner */
+/* .hero-banner {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  padding: 140px 0 80px;
+  text-align: center;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+  margin-top: 80px;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 30% 20%, rgba(192, 160, 128, 0.15) 0%, transparent 50%);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-banner h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-tagline {
+  font-size: 1.3rem;
+  color: var(--accent-color);
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto;
+} */
+
+/* Contenu principal */
+.privacy-content {
+  background-color: var(--bg-color);
+  padding: 80px 0;
+  min-height: 70vh;
+}
+
+.privacy-content .container {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Sections de confidentialité */
+.privacy-section {
+  margin-bottom: 3.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.privacy-section:nth-child(1) { animation-delay: 0.1s; }
+.privacy-section:nth-child(2) { animation-delay: 0.2s; }
+.privacy-section:nth-child(3) { animation-delay: 0.3s; }
+.privacy-section:nth-child(4) { animation-delay: 0.4s; }
+.privacy-section:nth-child(5) { animation-delay: 0.5s; }
+.privacy-section:nth-child(6) { animation-delay: 0.6s; }
+.privacy-section:nth-child(7) { animation-delay: 0.7s; }
+.privacy-section:nth-child(8) { animation-delay: 0.8s; }
+.privacy-section:nth-child(9) { animation-delay: 0.9s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.privacy-section h2 {
+  font-family: var(--heading-font);
+  font-size: 1.9rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.8rem;
+  text-align: left;
+}
+
+.privacy-section h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent-color);
+  border-radius: 3px;
+}
+
+.privacy-section h3 {
+  font-family: var(--heading-font);
+  font-size: 1.4rem;
+  color: var(--secondary-color);
+  margin: 1.5rem 0 1rem 0;
+}
+
+/* Cartes d'informations */
+.info-card {
+  background-color: var(--white);
+  padding: 2.2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+  position: relative;
+}
+
+.info-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+  border-radius: var(--radius) 0 0 var(--radius);
+}
+
+.info-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(44, 62, 80, 0.12);
+  border-color: var(--accent-color);
+}
+
+.info-card p {
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  line-height: 1.7;
+}
+
+.info-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* Listes spécialisées */
+.data-list, .purpose-list, .retention-list, .sharing-list {
+  margin: 1.2rem 0;
+  padding-left: 0;
+}
+
+.data-list li, .retention-list li, .sharing-list li {
+  background-color: var(--light-bg);
+  margin-bottom: 0.8rem;
+  padding: 12px 18px;
+  border-radius: 6px;
+  border-left: 3px solid var(--accent-color);
+  position: relative;
+}
+
+.purpose-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  padding: 10px 0;
+}
+
+.purpose-list li i {
+  color: var(--accent-color);
+  margin-right: 12px;
+  font-size: 1.1rem;
+}
+
+/* Grille des droits */
+.rights-card {
+  background: linear-gradient(135deg, var(--white) 0%, var(--light-bg) 100%);
+}
+
+.rights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.right-item {
+  background-color: var(--white);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  text-align: center;
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+  position: relative;
+}
+
+.right-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(44, 62, 80, 0.1);
+  border-color: var(--accent-color);
+}
+
+.right-item i {
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.right-item h4 {
+  font-family: var(--heading-font);
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-bottom: 0.8rem;
+}
+
+.right-item p {
+  font-size: 0.95rem;
+  color: var(--light-text);
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+/* Carte de contact */
+.contact-card {
+  background: linear-gradient(135deg, var(--light-bg) 0%, var(--white) 100%);
+}
+
+.contact-info {
+  background-color: var(--white);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  margin: 1rem 0;
+  border: 1px solid var(--border-color);
+}
+
+.contact-info p {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.contact-info p:last-child {
+  margin-bottom: 0;
+}
+
+.contact-info i {
+  color: var(--accent-color);
+  margin-right: 12px;
+  width: 20px;
+  font-size: 1.1rem;
+}
+
+/* Liens */
+.info-card a {
+  color: var(--primary-color);
+  font-weight: 500;
+  transition: var(--transition);
+  position: relative;
+}
+
+.info-card a:hover {
+  color: var(--secondary-color);
+}
+
+.info-card a[href^="mailto:"]::before {
+  content: '\f0e0';
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  margin-right: 6px;
+  color: var(--accent-color);
+}
+
+.info-card a[href^="tel:"]::before {
+  content: '\f095';
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  margin-right: 6px;
+  color: var(--accent-color);
+}
+
+.info-card a[href^="http"]::after {
+  content: '\f35d';
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  margin-left: 6px;
+  font-size: 0.8em;
+  color: var(--accent-color);
+}
+
+/* Styles pour les éléments strong */
+.info-card strong {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-banner {
+    padding: 120px 0 60px;
+    margin-top: 70px;
+  }
+
+  .hero-banner h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.1rem;
+    padding: 0 10px;
+  }
+
+  .privacy-content {
+    padding: 60px 0;
+  }
+
+  .privacy-section {
+    margin-bottom: 2.8rem;
+  }
+
+  .privacy-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .privacy-section h3 {
+    font-size: 1.2rem;
+  }
+
+  .info-card {
+    padding: 1.8rem;
+  }
+
+  .rights-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .right-item {
+    padding: 1.2rem;
+  }
+
+  .contact-info {
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-banner h1 {
+    font-size: 2rem;
+  }
+
+  .hero-tagline {
+    font-size: 1rem;
+  }
+
+  .privacy-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .privacy-section h3 {
+    font-size: 1.1rem;
+  }
+
+  .info-card {
+    padding: 1.5rem;
+  }
+
+  .right-item {
+    padding: 1rem;
+  }
+
+  .contact-info {
+    padding: 1rem;
+  }
+
+  .privacy-content .container {
+    padding: 0 15px;
+  }
+}
