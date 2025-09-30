@@ -1,48 +1,4 @@
 /* CSS spécifique pour la page Politique de Confidentialité */
-
-/* Section Hero Banner */
-/* .hero-banner {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-  padding: 140px 0 80px;
-  text-align: center;
-  color: var(--white);
-  position: relative;
-  overflow: hidden;
-  margin-top: 80px;
-}
-
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 30% 20%, rgba(192, 160, 128, 0.15) 0%, transparent 50%);
-  z-index: 0;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-}
-
-.hero-banner h1 {
-  font-size: 3.2rem;
-  font-weight: 700;
-  color: var(--white);
-  margin-bottom: 1rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.hero-tagline {
-  font-size: 1.3rem;
-  color: var(--accent-color);
-  font-weight: 400;
-  line-height: 1.5;
-  max-width: 600px;
-  margin: 0 auto;
-} */
-
 /* Contenu principal */
 .privacy-content {
   background-color: var(--bg-color);
@@ -229,7 +185,7 @@
   background: linear-gradient(135deg, var(--light-bg) 0%, var(--white) 100%);
 }
 
-.contact-info {
+.contact-infos {
   background-color: var(--white);
   padding: 1.5rem;
   border-radius: var(--radius);
@@ -237,17 +193,17 @@
   border: 1px solid var(--border-color);
 }
 
-.contact-info p {
+.contact-infos p {
   display: flex;
   align-items: center;
   margin-bottom: 0.8rem;
 }
 
-.contact-info p:last-child {
+.contact-infos p:last-child {
   margin-bottom: 0;
 }
 
-.contact-info i {
+.contact-infos i {
   color: var(--accent-color);
   margin-right: 12px;
   width: 20px;

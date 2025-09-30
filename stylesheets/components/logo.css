@@ -1,0 +1,208 @@
+/* Styles pour le logo dans la navbar - Version logo seul optimisée */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: var(--transition);
+  padding: 10px 15px; /* Zone cliquable généreuse */
+  border-radius: 8px;
+}
+
+.logo-link:hover {
+  transform: scale(1.05); /* Effet plus marqué */
+  background-color: rgba(192, 160, 128, 0.12); /* Fond plus visible au hover */
+  box-shadow: 0 4px 16px rgba(44, 62, 80, 0.15); /* Ombre au hover */
+}
+
+/* Image du logo - Version logo seul */
+.logo img {
+  height: 65px; /* Plus grand maintenant qu'il est seul */
+  width: auto;
+  margin: 0; /* Plus de marge puisqu'il n'y a plus de texte */
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  filter: brightness(1.1) contrast(1.15); /* Encore plus de clarté */
+  box-shadow: 0 3px 12px rgba(44, 62, 80, 0.2); /* Ombre plus marquée */
+}
+
+/* Image du logo - sur banner */
+.logo-banner img {
+  height: 100px; /* Taille plus grande pour la bannière */
+  width: auto;
+  margin: 10px 0; /* Espace autour du logo dans la bannière */
+  border-radius: 10px;
+  filter: brightness(1.1) contrast(1.15);
+  box-shadow: 0 5px 20px rgba(44, 62, 80, 0.3);
+}
+
+/* Ajustement de la taille du logo lors du scroll */
+.header.scrolled .logo img {
+  height: 40px; /* Reste bien visible même scrollé */
+}
+
+/* Styles alternatifs si vous voulez tester différentes approches */
+.logo-extra-large img {
+  height: 75px; /* Version encore plus grande */
+}
+
+.header.scrolled .logo-extra-large img {
+  height: 60px;
+}
+
+/* Version avec fond coloré derrière le logo (optionnel) */
+.logo-with-bg .logo-link {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(192, 160, 128, 0.2);
+}
+
+.logo-with-bg .logo-link:hover {
+  background-color: rgba(255, 255, 255, 1);
+  border-color: var(--accent-color);
+}
+
+/* Version avec effet glow (optionnel) */
+.logo-glow img {
+  filter: brightness(1.1) contrast(1.15) drop-shadow(0 0 8px rgba(192, 160, 128, 0.3));
+}
+
+.logo-glow .logo-link:hover img {
+  filter: brightness(1.15) contrast(1.2) drop-shadow(0 0 12px rgba(192, 160, 128, 0.5));
+}
+
+/* Responsive pour mobile - Version logo seul */
+@media (max-width: 768px) {
+  .logo img {
+    height: 55px; /* Bien visible sur tablette */
+  }
+
+  .header.scrolled .logo img {
+    height: 45px; /* Reste imposant même scrollé */
+  }
+
+  .logo-extra-large img {
+    height: 65px;
+  }
+
+  .header.scrolled .logo-extra-large img {
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    height: 50px; /* Parfaitement visible sur mobile */
+  }
+
+  .header.scrolled .logo img {
+    height: 42px; /* Toujours bien visible */
+  }
+
+  .logo-link {
+    padding: 8px 12px; /* Zone cliquable adaptée au mobile */
+  }
+
+  .logo-extra-large img {
+    height: 58px;
+  }
+
+  .header.scrolled .logo-extra-large img {
+    height: 48px;
+  }
+}
+
+@media (max-width: 360px) {
+  /* Pour les très petits écrans */
+  .logo img {
+    height: 45px;
+  }
+
+  .header.scrolled .logo img {
+    height: 38px;
+  }
+
+  .logo-link {
+    padding: 6px 10px;
+  }
+}
+
+/* Animations supplémentaires pour le logo */
+@keyframes logoEntrance {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.logo img {
+  animation: logoEntrance 0.6s ease-out;
+}
+
+/* États de focus pour l'accessibilité */
+.logo-link:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Version haute résolution pour écrans Retina */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .logo img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Classes utilitaires pour différentes variations */
+.logo-shadow-none img {
+  box-shadow: none;
+}
+
+.logo-rounded img {
+  border-radius: 50%;
+}
+
+.logo-square img {
+  border-radius: 0;
+}
+
+.logo-subtle-shadow img {
+  box-shadow: 0 1px 3px rgba(44, 62, 80, 0.1);
+}
+
+.logo-strong-shadow img {
+  box-shadow: 0 5px 20px rgba(44, 62, 80, 0.3);
+}
+
+/* Animation au scroll pour le logo */
+@media (prefers-reduced-motion: no-preference) {
+  .logo img {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .logo-link:hover img {
+    transform: rotate(-2deg) scale(1.02);
+  }
+}
+
+/* Pour les utilisateurs préférant moins d'animations */
+@media (prefers-reduced-motion: reduce) {
+  .logo img {
+    transition: height 0.3s ease;
+  }
+
+  .logo-link:hover {
+    transform: none;
+  }
+
+  .logo-link:hover img {
+    transform: none;
+  }
+}

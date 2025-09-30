@@ -1,0 +1,38 @@
+/* ========================================
+   FICHIER PRINCIPAL - IMPORTS
+   Ordre : Base → Components → Pages
+   ======================================== */
+
+/* === BASE - Variables et styles globaux === */
+@import "base/variables.css";
+@import "base/reset.css";
+@import "base/typography.css";
+@import "base/buttons.css";
+
+/* === LAYOUT - Structure du site === */
+@import "layout/header.css";
+@import "layout/footer.css";
+@import "layout/containers.css";
+
+/* === COMPONENTS - Éléments réutilisables === */
+@import "components/animations.css";
+@import "components/articles.css";
+@import "components/hero.css";
+@import "components/inflation.css";
+@import "components/logo.css";
+@import "components/taux.css";
+
+/* === PAGES - Styles spécifiques aux pages === */
+@import "pages/accueil.css";
+@import "pages/presentation.css";
+@import "pages/actualites.css";
+@import "pages/contact.css";
+@import "pages/services-faq.css";
+@import "pages/mentions-legales.css";
+@import "pages/donnees-personnelles.css";
+@import "pages/plan-du-site.css";
+
+@import "./style.css";
+
+/* === RESPONSIVE - Toujours en dernier === */
+@import "components/responsive.css";

@@ -1,0 +1,33 @@
+/* Styles globaux et variables */
+:root {
+  /* Palette de couleurs professionnelles et élégantes */
+  --primary-color: #2c3e50; /* Bleu foncé professionnel */
+  --secondary-color: #34495e; /* Bleu-gris plus foncé */
+  --accent-color: #c0a080; /* Or pâle/champagne pour touche d'élégance */
+  --text-color: #2c3e50; /* Bleu profond pour texte principal */
+  --light-text: #5d6d7e; /* Bleu-gris clair pour texte secondaire */
+  --bg-color: #f8f9fa; /* Blanc cassé très léger */
+  --white: #ffffff;
+  --light-bg: #eef2f5; /* Fond légèrement teinté bleu très pâle */
+  --border-color: #d1d8e0; /* Gris-bleu très pâle pour bordures */
+  --today-color: #0d6efd;
+  --year5-color: #20c997;
+  --year10-color: #fd7e14;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(to right, var(--primary-color), var(--secondary-color), var(--accent-color));
+  --gradient-accent: linear-gradient(135deg, #c0a080 0%, #f0e6d2 100%);
+
+  /* Typographie */
+  --body-font: 'Nunito Sans', 'Montserrat', sans-serif; /* Plus moderne et lisible */
+  --heading-font: 'Cormorant Garamond', 'Playfair Display', serif; /* Plus élégant */
+
+  /* Éléments UI */
+  --radius: 6px; /* Légèrement plus subtil que 8px */
+  --shadow: 0 4px 12px rgba(44, 62, 80, 0.08); /* Ombre plus subtile */
+  --transition: all 0.25s ease;
+  --container-width: 1200px;
+
+  /* Motif de fond subtil */
+  --pattern-color: rgba(44, 62, 80, 0.03); /* Couleur pour motif de fond */
+}
