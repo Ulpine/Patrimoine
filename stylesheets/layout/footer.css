@@ -1,6 +1,6 @@
 /* Footer */
 .footer {
-  background-color: var(--secondary-color);
+  background: var(--gradient-primary);
   color: var(--white);
   padding-top: 60px;
 }
