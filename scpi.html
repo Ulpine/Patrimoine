@@ -225,40 +225,80 @@
       </div>
     </section>
 
-    <section id="contact" class="contact">
-      <div class="container">
-          <h2 data-aos="fade-up">Prenons contact</h2>
-          <div class="contact-container">
-              <div class="contact-info" data-aos="fade-right">
-                  <p>Basé à <strong>Rennes</strong>, je vous propose un premier échange sans engagement pour répondre à vos questions et comprendre vos projets financiers.</p>
-                  <div class="contact-details">
-                      <p><strong>Email:</strong> <a href="mailto:contact@leotremoureux.fr">contact@leotremoureux.fr</a></p>
-                      <p><strong>Téléphone:</strong> <a href="tel:+33600000000">06 00 00 00 00</a></p>
-                  </div>
-              </div>
-              <div class="contact-form" data-aos="fade-left">
-                  <form id="contactForm" action="#" method="POST">
-                      <div class="form-group">
-                          <label for="name">Nom</label>
-                          <input type="text" id="name" name="name" required>
-                      </div>
-                      <div class="form-group">
-                          <label for="email">Email</label>
-                          <input type="email" id="email" name="email" required>
-                      </div>
-                      <div class="form-group">
-                          <label for="phone">Téléphone</label>
-                          <input type="tel" id="phone" name="phone">
-                      </div>
-                      <div class="form-group">
-                          <label for="message">Message</label>
-                          <textarea id="message" name="message" rows="5" required></textarea>
-                      </div>
-                      <button type="submit" class="btn btn-primary">Envoyer</button>
-                  </form>
-              </div>
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Prenons contact</h2>
+      <p class="contact-intro">
+        Le premier rendez-vous est gratuit et sans engagement. C'est l'occasion d'échanger sur votre situation et vos objectifs patrimoniaux.
+      </p>
+
+      <div class="contact-container">
+        <!-- Contact Info Card -->
+        <div class="contact-info">
+          <h3>Informations de contact</h3>
+          <p class="contact-info-text">
+            Basé à Rennes, je suis disponible pour échanger sur vos projets patrimoniaux. N'hésitez pas à me contacter pour toute question.
+          </p>
+
+          <div class="contact-details-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-detail-content">
+              <h4>Email</h4>
+              <a href="mailto:votre.email@domaine.com">votre.email@domaine.com</a>
+            </div>
           </div>
+
+          <div class="contact-details-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-detail-content">
+              <h4>Téléphone</h4>
+              <a href="tel:+33600000000">06 00 00 00 00</a>
+            </div>
+          </div>
+
+          <div class="contact-details-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-detail-content">
+              <h4>Localisation</h4>
+              <p>Rennes, Bretagne</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+          <form id="contactForm" action="#" method="POST">
+            <div class="form-group">
+              <label for="name">Nom complet *</label>
+              <input type="text" id="name" name="name" placeholder="Jean Dupont" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Adresse email *</label>
+              <input type="email" id="email" name="email" placeholder="jean.dupont@email.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Téléphone</label>
+              <input type="tel" id="phone" name="phone" placeholder="06 12 34 56 78">
+            </div>
+
+            <div class="form-group">
+              <label for="message">Votre message *</label>
+              <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet ou vos besoins..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-contact">Envoyer le message</button>
+          </form>
+        </div>
       </div>
+    </div>
   </section>
   </main>
 

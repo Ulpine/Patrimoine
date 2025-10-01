@@ -28,19 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   });
 
-  // Fonction pour ouvrir aléatoirement une question au chargement (optionnel)
-  function openRandomQuestion() {
-      // Décider si on ouvre une question (50% de chance)
-      if (Math.random() > 0.5) {
-          // Choisir une question aléatoire
-          const randomIndex = Math.floor(Math.random() * faqItems.length);
-          faqItems[randomIndex].classList.add('active');
-      }
-  }
-
-  // Appliquer l'effet d'ouverture aléatoire après un court délai
-  setTimeout(openRandomQuestion, 1000);
-
   // Gestion des touches de clavier (accessibilité)
   faqItems.forEach(item => {
       const question = item.querySelector('.faq-question');
@@ -56,3 +43,33 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   });
 });
+
+    // Gestion du formulaire
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        message: document.getElementById('message').value
+      };
+
+      console.log('Données du formulaire:', formData);
+      alert('Merci pour votre message ! Nous vous recontacterons rapidement.');
+      this.reset();
+    });
+
+    // Animation sur focus des inputs
+    const inputs = document.querySelectorAll('.form-group input, .form-group textarea');
+    inputs.forEach(input => {
+      input.addEventListener('focus', function() {
+        this.style.borderColor = '#c0a080';
+      });
+
+      input.addEventListener('blur', function() {
+        if (!this.value) {
+          this.style.borderColor = '#d1d8e0';
+        }
+      });
+    });

@@ -17,23 +17,41 @@
   z-index: 0;
 }
 
+/* Wrapper principal flex */
 .approach-content {
-  position: relative;
-  z-index: 1;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: stretch;  /* aligne l'image sur toute la hauteur des étapes */
   gap: 40px;
+  position: relative;
+  z-index: 1;
 }
 
-.approach-text {
-  flex: 1;
-  min-width: 300px;
+/* Colonne gauche : image */
+.approach-image-wrapper {
+  flex: 1;                 /* prend une colonne */
+  min-width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;    /* étire l'image sur toute la hauteur */
 }
 
+.approach-image {
+  width: auto;             /* largeur proportionnelle à la hauteur */
+  height: 100%;            /* occupe toute la hauteur du wrapper */
+  object-fit: cover;       /* recadrage si nécessaire */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+/* Colonne droite : étapes */
 .approach-steps {
-  flex: 1;
-  min-width: 300px;
+  flex: 1.2;               /* un peu plus large que l'image pour le texte */
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .step {
