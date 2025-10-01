@@ -1,0 +1,208 @@
+    /* SECTION */
+    .why-invest-section {
+      padding: 8rem 1rem;
+      background: var(--light-bg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why-invest-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(192,160,128,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 20s ease-in-out infinite;
+    }
+
+    .why-invest-section::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(192,160,128,0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 15s ease-in-out infinite reverse;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-30px, 30px) scale(1.1); }
+    }
+
+    .why-invest-title, .why-invest-subtitle {
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .why-invest-title {
+      font-size: 3rem;
+      font-weight: 800;
+      /* color: #fff; */
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.5px;
+    }
+
+    .why-invest-subtitle {
+      font-size: 1.3rem;
+      /* color: rgba(255, 255, 255, 0.8); */
+      margin-bottom: 6rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 300;
+    }
+
+    /* CYCLE WRAPPER */
+    .cycle-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ÉTAPES DU CYCLE */
+    .cycle-step {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 3rem 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 24px;
+      border: 1px solid rgba(192, 160, 128, 0.3);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+
+    .cycle-step::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-color), transparent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .cycle-step:hover {
+      transform: translateY(-12px);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(192, 160, 128, 0.3);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    .cycle-step:hover::before {
+      transform: scaleX(1);
+    }
+
+    .step-number-display {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--accent-color), #d4af88);
+      border-radius: 16px;
+      font-size: 1.5rem;
+      font-weight: 800;
+      /* color: #fff; */
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 24px rgba(192, 160, 128, 0.3);
+      transition: all 0.4s ease;
+    }
+
+    .cycle-step:hover .step-number-display {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 12px 32px rgba(192, 160, 128, 0.5);
+    }
+
+    .step-heading {
+      font-size: 1.4rem;
+      font-weight: 700;
+      /* color: #fff; */
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .step-text {
+      font-size: 1rem;
+      /* color: rgba(255, 255, 255, 0.7); */
+      line-height: 1.7;
+      font-weight: 300;
+      text-align: justify;
+    }
+
+    /* Ligne de progression - SUPPRIMÉE */
+
+    /* RESPONSIVE */
+    @media (max-width: 1200px) {
+      .cycle-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .why-invest-section {
+        padding: 5rem 1rem;
+      }
+
+      .why-invest-title {
+        font-size: 2.2rem;
+      }
+
+      .why-invest-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 4rem;
+      }
+
+      .cycle-wrapper {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .cycle-step {
+        padding: 2.5rem 1.5rem;
+      }
+
+      .progress-line {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .why-invest-title {
+        font-size: 1.8rem;
+      }
+
+      .cycle-step {
+        padding: 2rem 1.2rem;
+      }
+
+      .step-number-display {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+      }
+
+      .step-heading {
+        font-size: 1.2rem;
+      }
+
+      .step-text {
+        font-size: 0.95rem;
+      }
+    }
