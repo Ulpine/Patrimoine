@@ -1,0 +1,94 @@
+/* Section Philosophie subtile */
+.philosophy-section-alt {
+  padding: 100px 0;
+  background: #ffffff;
+  color: var(--text-color);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.philosophy-text-alt {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.philosophy-text-alt blockquote {
+  margin: 0;
+  font-size: 1.3rem;
+  line-height: 1.9;
+  font-family: var(--body-font);
+  font-style: italic;
+  font-weight: 400;
+  position: relative;
+  padding: 0 30px;
+  color: #4a5568;
+}
+
+.philosophy-text-alt blockquote::before,
+.philosophy-text-alt blockquote::after {
+  content: "“";
+  position: absolute;
+  font-size: 3rem;
+  color: var(--primary-color);
+  opacity: 0.15;
+  font-family: Georgia, serif;
+}
+
+.philosophy-text-alt blockquote::before {
+  left: 0;
+  top: -10px;
+}
+
+.philosophy-text-alt blockquote::after {
+  content: "”";
+  right: 0;
+  bottom: -20px;
+}
+
+/* Signature */
+.philosophy-signature-alt {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+
+.signature-line {
+  width: 60px;
+  height: 1px;
+  background: var(--primary-color);
+  opacity: 0.3;
+  margin-bottom: 10px;
+}
+
+.signature-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-color);
+  font-family: var(--heading-font);
+}
+
+.signature-title {
+  font-size: 0.9rem;
+  color: #718096;
+  font-weight: 400;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .philosophy-section-alt {
+    padding: 70px 20px;
+  }
+  .philosophy-text-alt {
+    max-width: 100%;
+  }
+  .philosophy-text-alt blockquote {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    padding: 0 20px;
+  }
+}

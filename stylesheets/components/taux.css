@@ -1,6 +1,6 @@
 /* === Section taux de rémunération === */
 .taux-remuneration {
-  background-color: var(--white);
+  background-color: var(--bg-color);
   padding: 80px 0;
   position: relative;
   overflow: hidden;
@@ -195,11 +195,11 @@
 }
 
 .compte-courant .taux-value {
-  color: #95a5a6;
+  color: var(--light-text);
 }
 
 .inflation .taux-value {
-  color: #e74c3c;
+  color: var(--accent-color);
 }
 
 .percent {

@@ -10,9 +10,9 @@
   --white: #ffffff;
   --light-bg: #eef2f5; /* Fond légèrement teinté bleu très pâle */
   --border-color: #d1d8e0; /* Gris-bleu très pâle pour bordures */
-  --today-color: #0d6efd;
-  --year5-color: #20c997;
-  --year10-color: #fd7e14;
+  --today-color: var(--primary-color);
+  --year5-color: var(--light-text);
+  --year10-color: var(--accent-color);
 
   /* Gradients */
   /* --gradient-primary: linear-gradient(to right, var(--primary-color), var(--secondary-color), var(--accent-color)); */

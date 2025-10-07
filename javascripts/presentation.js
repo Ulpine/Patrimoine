@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, observerOptions);
 
   // Observer tous les éléments à animer
-  document.querySelectorAll('.about-content, .expertise-card, .certifications-content').forEach(element => {
+  document.querySelectorAll('.about-content, .certifications-content').forEach(element => {
     animationObserver.observe(element);
   });
 
@@ -293,7 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ====== AMÉLIORATION DE L'ACCESSIBILITÉ ======
 
   // Ajouter des attributs ARIA pour améliorer l'accessibilité
-  document.querySelectorAll('.values-card, .expertise-card, .commitment-item').forEach(card => {
+  document.querySelectorAll('.values-card, .commitment-item').forEach(card => {
     card.setAttribute('tabindex', '0');
   });
 
