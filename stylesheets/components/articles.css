@@ -2,31 +2,6 @@
    ARTICLES & ACTUALITÉS - Grilles de cartes
    ======================================== */
 
-/* Grille générale des actualités */
-.news-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-}
-
-.news-card {
-  background-color: var(--white);
-  padding: 25px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  transition: var(--transition);
-}
-
-.news-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
-
-.card-icon {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
 /* Grille de cartes d'information */
 .card-group {
   display: grid;
@@ -58,4 +33,423 @@
 .info-card p {
   font-size: 1rem;
   color: var(--light-text);
+}
+
+/* Bouton de retour */
+.back-button {
+  position: fixed;
+  top: 140px;
+  left: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+  background: white;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 998;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideInLeft 0.5s ease forwards 0.3s;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.back-button:hover {
+  background: var(--gradient-primary);
+  color: white;
+  transform: translateX(-5px);
+  box-shadow: 0 6px 20px rgba(192, 160, 128, 0.3);
+  width: auto;
+  padding: 12px 20px;
+  border-radius: 50px;
+}
+
+.back-button i {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.back-button:hover i {
+  transform: translateX(-3px);
+}
+
+.back-button span {
+  opacity: 0;
+  max-width: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.back-button:hover span {
+  opacity: 1;
+  max-width: 200px;
+  margin-left: 10px;
+}
+
+/* Animation d'entrée */
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Adaptation au scroll du header */
+.header.scrolled ~ .back-button {
+  top: 85px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .back-button {
+    left: 20px;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .back-button {
+    top: 100px;
+    left: 15px;
+    width: 45px;
+    height: 45px;
+  }
+
+  .back-button i {
+    font-size: 1rem;
+  }
+
+  .header.scrolled ~ .back-button {
+    top: 80px;
+  }
+
+  /* Désactiver l'expansion au hover sur mobile */
+  .back-button:hover {
+    width: 45px;
+    padding: 0;
+  }
+
+  .back-button:hover span {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .back-button {
+    top: 90px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .back-button i {
+    font-size: 0.95rem;
+  }
+
+  .header.scrolled ~ .back-button {
+    top: 75px;
+  }
+
+  .back-button:hover {
+    width: 40px;
+  }
+}
+
+/* Visual schema section */
+.visual-schema-section {
+  margin: 60px auto;
+  padding: 40px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.visual-schema-section .responsive-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.visual-schema-section .responsive-image:hover {
+  transform: scale(1.02);
+}
+
+/* Fiscal advantages section */
+.fiscal-advantages {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin: 35px 0 50px 0;
+}
+
+.advantage-item {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-left: 4px solid var(--primary-color);
+}
+
+.advantage-item:hover {
+  transform: translateX(8px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.advantage-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, rgba(192, 160, 128, 0.1) 0%, rgba(192, 160, 128, 0.05) 100%);
+  border-radius: 12px;
+}
+
+.advantage-icon i {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.advantage-content {
+  flex: 1;
+}
+
+.advantage-content h4 {
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.advantage-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin: 0;
+}
+
+/* Style pour les icônes dans les info-cards */
+.info-card h4 i {
+  margin-right: 10px;
+  color: var(--primary-color);
+  font-size: 1.3rem;
+}
+
+/* Responsive for new sections */
+@media (max-width: 768px) {
+  .visual-schema-section {
+    padding: 25px 20px;
+    margin: 40px 20px;
+  }
+
+  .advantage-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px 20px;
+  }
+
+  .advantage-icon {
+    margin: 0 auto;
+  }
+
+  .advantage-icon i {
+    font-size: 1.8rem;
+  }
+
+  .advantage-content h4 {
+    font-size: 1.15rem;
+  }
+
+  .advantage-content p {
+    font-size: 0.95rem;
+  }
+
+  .info-card h4 i {
+    font-size: 1.2rem;
+  }
+}
+
+/* SCPI */
+/* Style pour les icônes dans les info-cards */
+.info-card h4 i {
+  margin-right: 10px;
+  color: var(--primary-color);
+  font-size: 1.3rem;
+}
+
+/* Cartes avantages et inconvénients spécifiques */
+.advantages-card {
+  border-left-color: #10b981;
+}
+
+.advantages-card h4 {
+  color: #10b981;
+}
+
+.advantages-card h4 i {
+  color: #10b981;
+}
+
+.warnings-card {
+  border-left-color: #f59e0b;
+}
+
+.warnings-card h4 {
+  color: #f59e0b;
+}
+
+.warnings-card h4 i {
+  color: #f59e0b;
+}
+
+/* Listes dans les cartes */
+.info-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0 0 0;
+}
+
+.info-card ul li {
+  padding: 8px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.info-card ul li i {
+  margin-top: 4px;
+  font-size: 0.75rem;
+  color: var(--primary-color);
+  flex-shrink: 0;
+}
+
+.advantages-card ul li i {
+  color: #10b981;
+}
+
+.warnings-card ul li i {
+  color: #f59e0b;
+}
+
+/* Section Investment Tips */
+.investment-tips {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin: 35px 0 50px 0;
+}
+
+.tip-item {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-left: 4px solid var(--primary-color);
+}
+
+.tip-item:hover {
+  transform: translateX(8px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.tip-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, rgba(192, 160, 128, 0.1) 0%, rgba(192, 160, 128, 0.05) 100%);
+  border-radius: 12px;
+}
+
+.tip-icon i {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.tip-content {
+  flex: 1;
+}
+
+.tip-content h4 {
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.tip-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tip-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px 20px;
+  }
+
+  .tip-icon {
+    margin: 0 auto;
+  }
+
+  .tip-icon i {
+    font-size: 1.8rem;
+  }
+
+  .tip-content h4 {
+    font-size: 1.15rem;
+  }
+
+  .tip-content p {
+    font-size: 0.95rem;
+  }
+
+  .info-card h4 i {
+    font-size: 1.2rem;
+  }
+
+  .info-card ul li {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tip-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .tip-icon i {
+    font-size: 1.5rem;
+  }
 }

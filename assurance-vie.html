@@ -75,7 +75,7 @@
   <link rel="icon" type="image/png" href="images/favicon.png">
 
   <script src="javascripts/main.js" defer></script>
-  <script src="javascripts/asv.js" defer></script>
+  <script src="javascripts/articles.js" defer></script>
 </head>
 
 <body>
@@ -84,15 +84,14 @@
         <nav class="navbar">
             <div class="logo">
                 <a href="index.html" class="logo-link">
-                    <span class="logo-text">Léo TREMOUREUX</span>
-                    <!-- <span class="logo-subtitle">Conseil en Investissements Financiers</span> -->
+                    <img src="images/logo1.png" alt="Logo Léo Tremoureux - Conseil en Investissements Financiers" class="logo-image">
                 </a>
             </div>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="index.html">Accueil</a></li>
                 <li class="nav-item"><a href="presentation.html">À propos</a></li>
                 <li class="nav-item"><a href="actualites.html">Actualités</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-cta">Contact</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-cta">Contact</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -101,15 +100,25 @@
             </div>
         </nav>
     </div>
-</header>
+  </header>
+
+  <a href="actualites.html#articles" class="back-button" aria-label="Retour aux articles">
+    <i class="fas fa-arrow-left"></i>
+    <span>Retour aux articles</span>
+  </a>
 
   <main>
-    <section class="page-header">
+    <section class="hero-banner">
+      <div class="hero-overlay"></div>
       <div class="container">
-        <h1>Comprendre l'assurance vie</h1>
-        <p class="subtitle">Un outil d'épargne aux multiples facettes, adapté à de nombreux objectifs : placement, transmission, retraite.</p>
+        <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
+          <h1>Comprendre l'assurance vie</h1>
+          <div class="hero-tagline">
+              Un outil d'épargne aux multiples facettes, adapté à de nombreux objectifs : placement, transmission, retraite.
+          </div>
       </div>
-    </section>
+    </div>
+  </section>
 
     <section class="content-section">
       <div class="container">
@@ -153,35 +162,52 @@
           </div>
         </div>
 
+        <!-- Section à quoi sert elle ? -->
         <h3>À quoi sert-elle&nbsp;?</h3>
         <div class="card-group">
           <div class="info-card">
-            <h4>💰 Épargner</h4>
+            <h4><i class="fas fa-piggy-bank"></i> Épargner</h4>
             <p>Constituer une épargne à moyen ou long terme, avec différents supports d'investissement (fonds en euros, unités de compte).</p>
           </div>
           <div class="info-card">
-            <h4>🎯 Préparer un projet</h4>
+            <h4><i class="fas fa-bullseye"></i> Préparer un projet</h4>
             <p>Financer un achat immobilier, les études des enfants ou compléter sa retraite.</p>
           </div>
           <div class="info-card">
-            <h4>🏠 Transmettre son patrimoine</h4>
+            <h4><i class="fas fa-home"></i> Transmettre son patrimoine</h4>
             <p>Optimiser la transmission à vos proches grâce à une fiscalité allégée.</p>
           </div>
         </div>
 
-
-        <h3>Fonctionnement simplifié</h3>
-        <p>Vous versez de l'argent sur le contrat. Celui-ci est ensuite investi, selon votre choix, sur un ou plusieurs supports. Vous pouvez retirer votre argent à tout moment. Au bout de 8 ans, la fiscalité devient encore plus avantageuse.</p>
-
-        <div class="schema-container">
+        <!-- Schéma visuel -->
+        <div class="visual-schema-section">
           <img src="images/schema-assurance-vie.png" alt="Schéma explicatif de l'assurance vie" class="responsive-image">
-          <p class="caption">Exemple de fonctionnement simplifié d'un contrat d'assurance vie.</p>
         </div>
 
-        <h3>Quels avantages fiscaux&nbsp;?</h3>
-        <p>L'assurance vie offre une fiscalité allégée sur les gains après 8 ans, ainsi que des exonérations intéressantes en cas de transmission aux bénéficiaires désignés.</p>
-
-        <p>Il est important de bien définir vos objectifs (épargne, transmission, retraite) pour choisir les bons supports et adapter votre contrat à votre situation.</p>
+        <h3>Les avantages fiscaux de l'assurance vie</h3>
+        <div class="fiscal-advantages">
+          <div class="advantage-item">
+            <div class="advantage-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="advantage-content">
+              <h4>Après 8 ans de détention</h4>
+              <p>Bénéficiez d'un abattement annuel de 4 600€ (9 200€ pour un couple) sur les gains en cas de rachat partiel ou total.</p>
+            </div>
+          </div>
+          <div class="advantage-item">
+            <div class="advantage-icon"><i class="fas fa-gift"></i></div>
+            <div class="advantage-content">
+              <h4>En cas de transmission</h4>
+              <p>Chaque bénéficiaire désigné peut recevoir jusqu'à 152 500€ exonérés de droits de succession (pour les versements effectués avant 70 ans).</p>
+            </div>
+          </div>
+          <div class="advantage-item">
+            <div class="advantage-icon"><i class="fas fa-sync-alt"></i></div>
+            <div class="advantage-content">
+              <h4>Pendant la phase d'épargne</h4>
+              <p>Les gains générés au sein du contrat ne sont pas imposés tant que vous ne procédez pas à un retrait. Vos intérêts sont capitalisés sans fiscalité immédiate.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 

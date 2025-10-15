@@ -22,13 +22,13 @@
 @import "components/logo.css";
 @import "components/section-philosophy.css";
 @import "components/pourquoi-investir.css";
+@import "components/quiz.css";
 @import "components/section-engagements.css";
 @import "components/taux.css";
 @import "components/values-card.css";
 
 /* === PAGES - Styles spécifiques aux pages === */
 @import "pages/accueil.css";
-@import "pages/asv.css";
 @import "pages/presentation.css";
 @import "pages/actualites.css";
 @import "pages/contact.css";

@@ -37,29 +37,38 @@ document.addEventListener('DOMContentLoaded', function() {
     console.error("Impossible de trouver le menu hamburger ou la navigation");
   }
 
-  // Gestion du header au scroll - MODIFIÉ POUR AJOUTER LA CLASSE scrolled
-  const header = document.querySelector('.header');
-  let lastScrollTop = 0;
+// Gestion du header au scroll - VERSION AMÉLIORÉE
+const header = document.querySelector('.header');
+let lastScrollTop = 0;
+let ticking = false;
 
-  if (header) {
-    // Ajoutez la classe default au chargement de la page
+if (header) {
+  // Classe default au chargement
+  header.classList.add('default');
+
+  window.addEventListener('scroll', function() {
+    lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        updateHeader();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+}
+
+function updateHeader() {
+  // Transition fluide à partir de 50px de scroll
+  if (lastScrollTop > 50) {
+    header.classList.remove('default');
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
     header.classList.add('default');
-
-    window.addEventListener('scroll', function() {
-      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-      // Ajoute la classe scrolled quand on scroll plus bas que 50px
-      if (scrollTop > 50) {
-        header.classList.remove('default');
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-        header.classList.add('default');
-      }
-
-      lastScrollTop = scrollTop;
-    });
   }
+}
 
   // Formulaire de contact avec validation
   const contactForm = document.getElementById('contactForm');
@@ -231,4 +240,64 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
   });
+});
+
+// Gestion du bouton retour avec scroll fluide
+document.addEventListener('DOMContentLoaded', function() {
+  const backButton = document.querySelector('.back-button');
+
+  if (backButton) {
+    backButton.addEventListener('click', function(e) {
+      // Si le lien pointe vers une ancre de la même page
+      const href = this.getAttribute('href');
+
+      // Vérifier si c'est un lien externe (vers une autre page avec ancre)
+      if (href.includes('#')) {
+        const [page, anchor] = href.split('#');
+
+        // Si on est déjà sur la bonne page, faire un scroll fluide
+        if (window.location.pathname.includes(page.replace('.html', '')) || page === '') {
+          e.preventDefault();
+
+          // Stocker l'ancre dans sessionStorage pour la page de destination
+          if (page && page !== '') {
+            sessionStorage.setItem('scrollToAnchor', anchor);
+            window.location.href = href;
+          } else {
+            // Scroll sur la même page
+            const targetElement = document.getElementById(anchor);
+            if (targetElement) {
+              const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
+              const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+
+              window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+              });
+            }
+          }
+        }
+      }
+    });
+  }
+
+  // Au chargement de la page, vérifier s'il faut scroller vers une ancre
+  const scrollToAnchor = sessionStorage.getItem('scrollToAnchor');
+  if (scrollToAnchor) {
+    sessionStorage.removeItem('scrollToAnchor');
+
+    // Attendre que la page soit complètement chargée
+    setTimeout(() => {
+      const targetElement = document.getElementById(scrollToAnchor);
+      if (targetElement) {
+        const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
+        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 100);
+  }
 });

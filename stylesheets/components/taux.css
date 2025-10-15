@@ -117,7 +117,7 @@
 }
 
 .compte-courant::after {
-  background-color: var(--primary-color);
+  background-color: var(--light-text);
 }
 
 .livret-a {
@@ -126,7 +126,7 @@
 }
 
 .livret-a::after {
-  background-color: #3498db;
+  background-color: var(--primary-color);
 }
 
 .ldds {
@@ -135,7 +135,7 @@
 }
 
 .ldds::after {
-  background-color: #27ae60;
+  background-color: var(--primary-color);
 }
 
 .lep {
@@ -144,7 +144,7 @@
 }
 
 .lep::after {
-  background-color: #9b59b6;
+  background-color: var(--primary-color);
 }
 
 .pel {
@@ -153,7 +153,7 @@
 }
 
 .pel::after {
-  background-color: #f1c40f;
+  background-color: var(--primary-color);
 }
 
 .inflation {
@@ -162,7 +162,7 @@
 }
 
 .inflation::after {
-  background-color: #e74c3c;
+  background-color: var(--accent-color)
 }
 
 .taux-header {

@@ -75,25 +75,24 @@
   <link rel="icon" type="image/png" href="images/favicon.png">
 
   <script src="javascripts/main.js" defer></script>
-  <script src="javascripts/per.js" defer></script>
+  <script src="javascripts/articles.js" defer></script>
 </head>
 
 
 <body>
-  <header class="header">
+<header class="header">
     <div class="container">
         <nav class="navbar">
             <div class="logo">
                 <a href="index.html" class="logo-link">
-                    <span class="logo-text">Léo TREMOUREUX</span>
-                    <!-- <span class="logo-subtitle">Conseil en Investissements Financiers</span> -->
+                    <img src="images/logo1.png" alt="Logo Léo Tremoureux - Conseil en Investissements Financiers" class="logo-image">
                 </a>
             </div>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="index.html">Accueil</a></li>
                 <li class="nav-item"><a href="presentation.html">À propos</a></li>
                 <li class="nav-item"><a href="actualites.html">Actualités</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-cta">Contact</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-cta">Contact</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -104,11 +103,21 @@
     </div>
 </header>
 
+  <a href="actualites.html#articles" class="back-button" aria-label="Retour aux articles">
+    <i class="fas fa-arrow-left"></i>
+    <span>Retour aux articles</span>
+  </a>
+
   <main>
-    <section class="page-header">
+    <section class="hero-banner">
+      <div class="hero-overlay"></div>
       <div class="container">
-        <h1>Le Plan d'Épargne Retraite (PER)</h1>
-        <p class="subtitle">Préparez votre retraite en défiscalisant : pourquoi, quand et comment utiliser le PER selon votre profil.</p>
+        <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
+          <h1>Le Plan d'Épargne Retraite (PER)</h1>
+          <div class="hero-tagline">
+              Préparez votre retraite en défiscalisant : pourquoi, quand et comment utiliser le PER selon votre profil.
+          </div>
+        </div>
       </div>
     </section>
 
@@ -157,65 +166,118 @@
         <h3>Les 3 principaux avantages du PER</h3>
         <div class="card-group">
           <div class="info-card">
-            <h4>🏦 Défiscalisation</h4>
+            <h4><i class="fas fa-hand-holding-dollar"></i> Défiscalisation</h4>
             <p>Réduisez votre impôt sur le revenu grâce à la déduction fiscale des versements volontaires, particulièrement avantageuse pour les foyers fortement imposés.</p>
           </div>
           <div class="info-card">
-            <h4>💼 Flexibilité</h4>
+            <h4><i class="fas fa-sliders"></i> Flexibilité</h4>
             <p>Choisissez librement entre une sortie en capital, en rente viagère, ou un mix des deux à la retraite. Possibilité de déblocage anticipé dans certains cas.</p>
           </div>
           <div class="info-card">
-            <h4>🔄 Transférabilité</h4>
+            <h4><i class="fas fa-arrows-rotate"></i> Transférabilité</h4>
             <p>Conservez et transférez facilement votre épargne retraite tout au long de votre vie professionnelle, même en cas de changement d'employeur.</p>
           </div>
         </div>
 
-        <h3>Comment fonctionne le PER ?</h3>
+        <h3>Les différentes formules du PER</h3>
         <p>Le PER se décline en trois formules principales, adaptées à différentes situations professionnelles :</p>
-        <ul>
-          <li><strong>PER Individuel</strong> : souscrit à titre personnel auprès d'une banque, assurance ou mutuelle</li>
-          <li><strong>PER Collectif</strong> : mis en place au niveau de l'entreprise pour tous les salariés</li>
-          <li><strong>PER Obligatoire</strong> : réservé à certaines catégories de salariés (cadres par exemple)</li>
-        </ul>
 
-        <p>Vous alimentez votre PER par des versements volontaires, déductibles de votre revenu imposable. Ces versements sont investis selon votre profil de risque et votre horizon de placement, avec une sécurisation progressive à l'approche de la retraite (gestion pilotée par défaut).</p>
-
-        <div class="schema-container">
-          <img src="images/schema-per.png" alt="Schéma explicatif du Plan d'Épargne Retraite" class="responsive-image">
-          <p class="caption">Fonctionnement simplifié du Plan d'Épargne Retraite (PER).</p>
+        <div class="card-group">
+          <div class="info-card">
+            <h4><i class="fas fa-user"></i> PER Individuel</h4>
+            <p>Souscrit à titre personnel auprès d'une banque, assurance ou mutuelle. Accessible à tous, sans condition d'activité professionnelle.</p>
+          </div>
+          <div class="info-card">
+            <h4><i class="fas fa-users"></i> PER Collectif</h4>
+            <p>Mis en place au niveau de l'entreprise pour tous les salariés qui le souhaitent. Peut inclure des versements de l'employeur.</p>
+          </div>
+          <div class="info-card">
+            <h4><i class="fas fa-briefcase"></i> PER Obligatoire</h4>
+            <p>Réservé à certaines catégories de salariés (cadres par exemple) avec adhésion obligatoire définie par accord collectif.</p>
+          </div>
         </div>
 
         <h3>Pour qui le PER est-il particulièrement intéressant ?</h3>
-        <p>Le PER est particulièrement avantageux pour :</p>
-        <ul>
-          <li>Les personnes avec un taux marginal d'imposition élevé (30% ou plus)</li>
-          <li>Les indépendants et professions libérales (qui peuvent déduire des montants importants)</li>
-          <li>Les personnes anticipant une baisse de leurs revenus à la retraite</li>
-          <li>Ceux qui souhaitent diversifier leur préparation à la retraite au-delà du système par répartition</li>
-        </ul>
+        <div class="fiscal-advantages">
+          <div class="advantage-item">
+            <div class="advantage-icon"><i class="fas fa-percent"></i></div>
+            <div class="advantage-content">
+              <h4>Contribuables fortement imposés</h4>
+              <p>Si votre taux marginal d'imposition est de 30% ou plus, la déduction fiscale du PER vous permet de réaliser des économies d'impôt substantielles immédiatement.</p>
+            </div>
+          </div>
+          <div class="advantage-item">
+            <div class="advantage-icon"><i class="fas fa-user-doctor"></i></div>
+            <div class="advantage-content">
+              <h4>Indépendants et professions libérales</h4>
+              <p>Les travailleurs non-salariés bénéficient de plafonds de déduction plus élevés, leur permettant d'optimiser significativement leur fiscalité tout en se constituant une retraite complémentaire.</p>
+            </div>
+          </div>
+          <div class="advantage-item">
+            <div class="advantage-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="advantage-content">
+              <h4>Anticipation d'une baisse de revenus</h4>
+              <p>Si vous prévoyez une diminution de vos revenus à la retraite, le PER vous permet de déduire maintenant avec une tranche élevée et de récupérer plus tard avec une fiscalité réduite.</p>
+            </div>
+          </div>
+        </div>
 
-        <h3>Quand récupérer son épargne ?</h3>
-        <p>À partir de votre départ à la retraite, vous pouvez récupérer votre épargne sous forme :</p>
-        <ul>
-          <li>De capital en une fois ou de manière fractionnée</li>
-          <li>De rente viagère</li>
-          <li>D'un mix des deux solutions</li>
-        </ul>
-        <p>Cette flexibilité est l'un des grands atouts du PER par rapport aux anciens produits d'épargne retraite.</p>
+        <h3>Options de sortie à la retraite</h3>
+        <div class="investment-tips">
+          <div class="tip-item">
+            <div class="tip-icon"><i class="fas fa-money-bill-wave"></i></div>
+            <div class="tip-content">
+              <h4>Sortie en capital</h4>
+              <p>Récupérez votre épargne en une seule fois ou de manière fractionnée. Idéal pour financer un projet spécifique ou disposer d'une somme importante à la retraite.</p>
+            </div>
+          </div>
+          <div class="tip-item">
+            <div class="tip-icon"><i class="fas fa-calendar-check"></i></div>
+            <div class="tip-content">
+              <h4>Sortie en rente viagère</h4>
+              <p>Transformez votre épargne en revenus réguliers garantis à vie. Sécurité et complément de revenu mensuel pour toute la durée de votre retraite.</p>
+            </div>
+          </div>
+          <div class="tip-item">
+            <div class="tip-icon"><i class="fas fa-arrows-split-up-and-left"></i></div>
+            <div class="tip-content">
+              <h4>Sortie mixte</h4>
+              <p>Combinez le meilleur des deux mondes : un capital pour vos projets immédiats et une rente pour sécuriser vos revenus sur le long terme.</p>
+            </div>
+          </div>
+        </div>
 
-        <h3>La fiscalité du PER</h3>
-        <p>La fiscalité du PER fonctionne selon le principe de "l'entrée-sortie" :</p>
-        <ul>
-          <li><strong>À l'entrée</strong> : déduction des versements du revenu imposable</li>
-          <li><strong>À la sortie</strong> : imposition des sommes retirées
-            <ul>
-              <li>Capital : imposition du capital sur le barème progressif de l'impôt sur le revenu (hors part correspondant aux plus-values, soumises au PFU)</li>
-              <li>Rente : imposition selon le régime des rentes viagères à titre gratuit</li>
-            </ul>
-          </li>
-        </ul>
+        <h3>Cas de déblocage anticipé</h3>
+        <p>Bien que le PER soit conçu pour la retraite, la loi prévoit plusieurs situations exceptionnelles permettant un déblocage avant terme :</p>
 
-        <p>Il est essentiel d'analyser votre situation personnelle et fiscale actuelle, ainsi que celle que vous anticipez à la retraite, pour déterminer si le PER est adapté à votre profil et à vos objectifs.</p>
+        <div class="card-group">
+          <div class="info-card unlock-card">
+            <h4><i class="fas fa-house-circle-check"></i> Achat de la résidence principale</h4>
+            <p>Déblocage possible uniquement pour les versements volontaires. Une opportunité unique pour financer votre premier achat immobilier.</p>
+          </div>
+          <div class="info-card unlock-card">
+            <h4><i class="fas fa-heart-pulse"></i> Accidents de la vie</h4>
+            <p>Décès du conjoint, invalidité (2ᵉ ou 3ᵉ catégorie), surendettement, fin de droits au chômage, ou liquidation judiciaire de votre entreprise.</p>
+          </div>
+        </div>
+
+        <h3>Fiscalité : le principe entrée-sortie</h3>
+        <div class="fiscal-advantages">
+          <div class="advantage-item">
+            <div class="advantage-icon"><i class="fas fa-arrow-right-to-bracket"></i></div>
+            <div class="advantage-content">
+              <h4>À l'entrée : Déduction fiscale</h4>
+              <p>Vos versements volontaires sont déductibles de votre revenu imposable dans la limite d'un plafond (10% des revenus professionnels pour les salariés, plafonds majorés pour les indépendants).</p>
+            </div>
+          </div>
+          <div class="advantage-item">
+            <div class="advantage-icon"><i class="fas fa-arrow-right-from-bracket"></i></div>
+            <div class="advantage-content">
+              <h4>À la sortie : Imposition des sommes retirées</h4>
+              <p>Le capital récupéré est imposé au barème progressif de l'impôt sur le revenu (hors plus-values soumises au PFU). La rente suit le régime des rentes viagères à titre gratuit.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
