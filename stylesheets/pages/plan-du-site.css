@@ -1,17 +1,5 @@
 /* CSS spécifique pour la page Plan du site */
 /* Contenu principal */
-/* main {
-  background-color: var(--bg-color);
-  padding: 80px 0;
-  min-height: 60vh;
-}
-
-main .container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 20px;
-} */
-
 #sitemap-heading {
   font-family: var(--heading-font);
   color: var(--secondary-color);
