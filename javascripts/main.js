@@ -70,54 +70,60 @@ function updateHeader() {
   }
 }
 
-  // Formulaire de contact avec validation
-  const contactForm = document.getElementById('contactForm');
+// Formulaire de contact avec validation + envoi Formspree
+const contactForm = document.getElementById('contactForm');
 
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
+if (contactForm) {
+  contactForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
 
-      // Validation simple
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const message = document.getElementById('message').value;
-      let isValid = true;
+    // Validation
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    let isValid = true;
 
-      if (name.trim() === '') {
-        isValid = false;
-        showError('name', 'Veuillez entrer votre nom');
-      } else {
-        clearError('name');
-      }
+    if (name.trim() === '') {
+      isValid = false;
+      showError('name', 'Veuillez entrer votre nom');
+    } else {
+      clearError('name');
+    }
 
-      if (email.trim() === '') {
-        isValid = false;
-        showError('email', 'Veuillez entrer votre email');
-      } else if (!isValidEmail(email)) {
-        isValid = false;
-        showError('email', 'Veuillez entrer un email valide');
-      } else {
-        clearError('email');
-      }
+    if (email.trim() === '') {
+      isValid = false;
+      showError('email', 'Veuillez entrer votre email');
+    } else if (!isValidEmail(email)) {
+      isValid = false;
+      showError('email', 'Veuillez entrer un email valide');
+    } else {
+      clearError('email');
+    }
 
-      if (message.trim() === '') {
-        isValid = false;
-        showError('message', 'Veuillez entrer votre message');
-      } else {
-        clearError('message');
-      }
+    if (message.trim() === '') {
+      isValid = false;
+      showError('message', 'Veuillez entrer votre message');
+    } else {
+      clearError('message');
+    }
 
-      if (isValid) {
-        // Simulation d'envoi
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
+    if (isValid) {
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
 
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Envoi en cours...';
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Message envoyé';
 
-        setTimeout(() => {
-          submitBtn.textContent = 'Envoyé !';
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
           contactForm.reset();
+          submitBtn.textContent = 'Envoyé !';
 
           // Message de succès
           const successMessage = document.createElement('div');
@@ -130,47 +136,57 @@ function updateHeader() {
             submitBtn.disabled = false;
             submitBtn.textContent = originalText;
           }, 3000);
-        }, 1500);
+
+        } else {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+          alert('Une erreur est survenue. Veuillez réessayer.');
+        }
+      } catch (error) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+        alert('Une erreur est survenue. Veuillez réessayer.');
       }
-    });
-  }
-
-  function showError(fieldId, message) {
-    const field = document.getElementById(fieldId);
-    if (!field) return;
-
-    let errorElement = field.nextElementSibling;
-
-    if (!errorElement || !errorElement.classList.contains('error-message')) {
-      errorElement = document.createElement('div');
-      errorElement.className = 'error-message';
-      errorElement.style.color = '#e74c3c';
-      errorElement.style.fontSize = '0.8rem';
-      errorElement.style.marginTop = '5px';
-      field.parentNode.insertBefore(errorElement, field.nextSibling);
     }
+  });
+}
 
-    errorElement.textContent = message;
-    field.style.borderColor = '#e74c3c';
+function showError(fieldId, message) {
+  const field = document.getElementById(fieldId);
+  if (!field) return;
+
+  let errorElement = field.nextElementSibling;
+
+  if (!errorElement || !errorElement.classList.contains('error-message')) {
+    errorElement = document.createElement('div');
+    errorElement.className = 'error-message';
+    errorElement.style.color = '#e74c3c';
+    errorElement.style.fontSize = '0.8rem';
+    errorElement.style.marginTop = '5px';
+    field.parentNode.insertBefore(errorElement, field.nextSibling);
   }
 
-  function clearError(fieldId) {
-    const field = document.getElementById(fieldId);
-    if (!field) return;
+  errorElement.textContent = message;
+  field.style.borderColor = '#e74c3c';
+}
 
-    const errorElement = field.nextElementSibling;
+function clearError(fieldId) {
+  const field = document.getElementById(fieldId);
+  if (!field) return;
 
-    if (errorElement && errorElement.classList.contains('error-message')) {
-      errorElement.remove();
-    }
+  const errorElement = field.nextElementSibling;
 
-    field.style.borderColor = '';
+  if (errorElement && errorElement.classList.contains('error-message')) {
+    errorElement.remove();
   }
 
-  function isValidEmail(email) {
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-  }
+  field.style.borderColor = '';
+}
+
+function isValidEmail(email) {
+  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
 
   // Défilement fluide pour les ancres
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
