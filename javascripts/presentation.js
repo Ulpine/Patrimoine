@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Ajouter un délai progressif pour chaque étape
         setTimeout(() => {
           step.classList.add('show');
-        }, 200 * index);
+        }, 20 * index);
       });
       methodObserver.unobserve(entries[0].target);
     }
