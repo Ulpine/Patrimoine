@@ -134,10 +134,14 @@
 
 @media (max-width: 768px) {
   .back-button {
-    top: 85px;
+    top: 75px; /* juste sous la navbar mobile */
     left: 10px;
     width: 38px;
     height: 38px;
+  }
+
+  .header.scrolled ~ .back-button {
+    top: 60px;
   }
 
   .back-button i {
@@ -161,10 +165,14 @@
 
 @media (max-width: 480px) {
   .back-button {
-    top: 80px;
+    top: 70px;
     left: 8px;
     width: 35px;
     height: 35px;
+  }
+
+  .header.scrolled ~ .back-button {
+    top: 55px;
   }
 
   .back-button i {
