@@ -142,7 +142,7 @@
   }
 
   .header.scrolled ~ .back-button {
-    top: 75px;
+    top: 80px;
   }
 
   .back-button:hover {
@@ -164,7 +164,7 @@
   }
 
   .header.scrolled ~ .back-button {
-    top: 70px;
+    top: 80px;
   }
 
   .back-button:hover {
