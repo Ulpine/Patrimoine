@@ -381,7 +381,7 @@
       line-height: 1.5;
     }
 
-    .taux-details i {
+    .taux-details li i {
       flex-shrink: 0;
       font-size: 0.8rem;
       margin-top: 3px;
