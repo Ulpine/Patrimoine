@@ -565,14 +565,14 @@
       margin-bottom: 20px;
     }
 
-    .contact-container {
+    /* .contact-container {
       flex-direction: column;
       gap: 25px;
     }
 
     .contact-info {
       text-align: center;
-    }
+    } */
 
     .contact-info p {
       font-size: 0.9rem;
