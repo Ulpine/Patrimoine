@@ -10,6 +10,19 @@
   margin: 20px 0;
 }
 
+@media (max-width: 768px) {
+  .card-group {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 991px) {
+  .card-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .info-card {
   background-color: var(--light-bg);
   border-left: 5px solid var(--primary-color);
