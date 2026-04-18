@@ -1,23 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
-  // Menu hamburger
-  const hamburger = document.querySelector('.hamburger');
-  const navMenu = document.querySelector('.nav-menu');
-
-  if (hamburger) {
-    hamburger.addEventListener('click', function () {
-      hamburger.classList.toggle('active');
-      navMenu.classList.toggle('active');
-    });
-  }
-
-  // Fermer le menu sur clic d'un lien
-  document.querySelectorAll('.nav-item a').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('active');
-      navMenu.classList.remove('active');
-    });
-  });
-
+document.addEventListener('DOMContentLoaded', function() {
   // Filtrage des articles
   const searchInput = document.getElementById('search-news');
   const searchBtn = document.querySelector('.search-btn');
