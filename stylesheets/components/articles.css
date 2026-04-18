@@ -134,27 +134,19 @@
 
 @media (max-width: 768px) {
   .back-button {
-    top: 75px; /* juste sous la navbar mobile */
+    top: 95px; /* bien sous la navbar */
     left: 10px;
     width: 38px;
     height: 38px;
+    padding: 0;
   }
 
   .header.scrolled ~ .back-button {
-    top: 60px;
+    top: 75px;
   }
 
-  .back-button i {
-    font-size: 1rem;
-  }
-
-  .header.scrolled ~ .back-button {
-    top: 80px;
-  }
-
-  /* Désactiver l'expansion au hover sur mobile */
   .back-button:hover {
-    width: 45px;
+    width: 38px;
     padding: 0;
   }
 
@@ -165,26 +157,18 @@
 
 @media (max-width: 480px) {
   .back-button {
-    top: 70px;
+    top: 90px;
     left: 8px;
     width: 35px;
     height: 35px;
   }
 
   .header.scrolled ~ .back-button {
-    top: 55px;
-  }
-
-  .back-button i {
-    font-size: 0.95rem;
-  }
-
-  .header.scrolled ~ .back-button {
-    top: 75px;
+    top: 70px;
   }
 
   .back-button:hover {
-    width: 40px;
+    width: 35px;
   }
 }
 
