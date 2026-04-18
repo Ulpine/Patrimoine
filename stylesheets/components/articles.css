@@ -10,6 +10,11 @@
   margin: 20px 0;
 }
 
+@media (max-width: 991px) {
+  .card-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 @media (max-width: 768px) {
   .card-group {
     grid-template-columns: 1fr;
@@ -17,11 +22,6 @@
   }
 }
 
-@media (max-width: 991px) {
-  .card-group {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
 .info-card {
   background-color: var(--light-bg);
@@ -134,10 +134,10 @@
 
 @media (max-width: 768px) {
   .back-button {
-    top: 100px;
-    left: 15px;
-    width: 45px;
-    height: 45px;
+    top: 85px;
+    left: 10px;
+    width: 38px;
+    height: 38px;
   }
 
   .back-button i {
@@ -161,10 +161,10 @@
 
 @media (max-width: 480px) {
   .back-button {
-    top: 90px;
-    left: 10px;
-    width: 40px;
-    height: 40px;
+    top: 80px;
+    left: 8px;
+    width: 35px;
+    height: 35px;
   }
 
   .back-button i {

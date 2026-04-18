@@ -71,7 +71,7 @@
 .quiz-options {
   display: flex;
   justify-content: center;
-  gap: 150px;
+  gap: 20px;
   margin-bottom: 20px;
 }
 
@@ -270,12 +270,14 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .quiz-options {
     flex-direction: column;
+    gap: 12px;
   }
 
   .quiz-option {
-    flex: 1 1 100%;
+    max-width: 100%;
+    width: 100%;
   }
 }
