@@ -375,15 +375,18 @@
   }
 
   .taux-details li {
+    position: static; /* ❌ annule le position: relative */
+    padding-left: 0;   /* annule le padding-left: 28px */
     display: flex;
     align-items: flex-start;
     gap: 8px;
-    padding: 4px 0;
     font-size: 0.85rem;
     line-height: 1.5;
+    margin-bottom: 8px;
   }
 
-  .taux-details li i {
+  .taux-details i {
+    position: static; /* annule le position: absolute */
     flex-shrink: 0;
     min-width: 14px;
     margin-top: 3px;
