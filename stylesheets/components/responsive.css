@@ -367,26 +367,28 @@
       color: var(--primary-color, #2c5aa0);
     }
 
-    .taux-details {
-      margin: 0;
-      padding: 0;
-    }
 
-    .taux-details li {
-      font-size: 0.85rem;
-      padding: 4px 0;
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      line-height: 1.5;
-    }
+  .taux-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 
-    .taux-details li i {
-      flex-shrink: 0;
-      font-size: 0.8rem;
-      margin-top: 3px;
-      min-width: 16px;
-    }
+  .taux-details li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 4px 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .taux-details li i {
+    flex-shrink: 0;
+    min-width: 14px;
+    margin-top: 3px;
+  }
+
 
     .service-card {
       padding: 20px 15px;
