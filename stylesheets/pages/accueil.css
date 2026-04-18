@@ -30,7 +30,7 @@
 /* Colonne gauche : image */
 .approach-image-wrapper {
   flex: 1;                 /* prend une colonne */
-  min-width: 350px;
+  min-width: 280px;
   display: flex;
   justify-content: center;
   align-items: stretch;    /* étire l'image sur toute la hauteur */
@@ -48,7 +48,7 @@
 /* Colonne droite : étapes */
 .approach-steps {
   flex: 1.2;               /* un peu plus large que l'image pour le texte */
-  min-width: 350px;
+  min-width: 280px;
   display: flex;
   flex-direction: column;
   justify-content: center;

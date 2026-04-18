@@ -210,7 +210,7 @@ function isValidEmail(email) {
     });
   });
 
-  document.addEventListener('DOMContentLoaded', function() {
+  // document.addEventListener('DOMContentLoaded', function() {
     // Animation subtile d'apparition
     const ctaContent = document.querySelector('.cta-content');
 
@@ -256,7 +256,7 @@ function isValidEmail(email) {
       });
     }
   });
-});
+// });
 
 // Gestion du bouton retour avec scroll fluide
 document.addEventListener('DOMContentLoaded', function() {
